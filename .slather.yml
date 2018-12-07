@@ -1,0 +1,5 @@
+coverage_service: cobertura_xml
+xcodeproj: WWLayout.xcodeproj
+scheme: WWLayout
+binary_basename: WWLayout
+#output_directory: output/slather

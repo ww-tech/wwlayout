@@ -1,0 +1,56 @@
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - trailing_whitespace
+  - statement_position # i.e. cuddled else, catch
+  - identifier_name
+  - cyclomatic_complexity
+
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  - closure_spacing
+  - operator_usage_whitespace
+  - comma
+  - colon
+  - opening_brace
+  - return_arrow_whitespace
+  - convenience_type
+  - empty_string
+  - force_unwrapping
+  - modifier_order
+  - multiline_arguments
+  - multiline_function_chains
+  - multiline_parameters
+  - overridden_super_call
+  - prohibited_super_call
+  - redundant_discardable_let
+  - redundant_nil_coalescing
+  - redundant_string_enum_value
+  - static_operator
+  - superfluous_disable_command
+  - trailing_comma
+  - yoda_condition
+
+custom_rules:
+  no_space_after_opening_parentheses:
+    name: "No space after opening parentheses"
+    message: "Please avoid using space after opening parentheses"
+    regex: '\(\h+'
+  no_space_before_closing_parentheses:
+    name: "No space before closing parentheses"
+    message: "Please avoid using space before closing parentheses"
+    regex: '\h+\)'
+
+included:
+  - Sources/WWLayout
+
+force_cast: warning # implicitly
+
+type_body_length:
+  - 500 # warning (default is 200)
+  - 600 # error (default is 350)
+
+function_body_length:
+  warning: 50
+  error: 120
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
