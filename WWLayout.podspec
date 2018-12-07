@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "WWLayout"
-  s.version      = "0.4.1"
+  s.version      = "0.5.0"
   s.summary      = "An easy way to add layout constraints"
   s.description  = "WWLayout is an easy way to add layout constraints"
   s.homepage     = "https://github.com/WW-Digital/wwlayout"
