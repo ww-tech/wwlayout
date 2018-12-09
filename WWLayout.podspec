@@ -14,13 +14,11 @@ Pod::Spec.new do |s|
   s.description  = "WWLayout is an easy way to add layout constraints with code."
   s.homepage     = "https://github.com/ww-tech/wwlayout"
 
-  s.license      = "MIT"
+  s.license      = "Apache-2.0"
   s.author       = { "Steven Grosmark" => "steven.grosmark@weightwatchers.com" }
   s.platform     = :ios, "9.0"
   
   s.source       = { :git => "https://github.com/ww-tech/wwlayout.git", :tag => s.version.to_s }
   s.source_files = "Sources/WWLayout", "Sources/WWLayout/**/*.{h,m,swift}"
-
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
 
 end
