@@ -30,7 +30,7 @@
 
 import UIKit
 
-public extension Layout {
+extension Layout {
     
     //size(80)
     //  size(80, 200)
