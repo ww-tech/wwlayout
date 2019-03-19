@@ -39,7 +39,7 @@ public enum LayoutRelation {
 
 // MARK: - constraint creation helpers
 
-internal extension LayoutRelation {
+extension LayoutRelation {
     
     /// Get the corresponding NSLayoutRelation
     internal var nsRelation: LayoutConstraint.Relation {
