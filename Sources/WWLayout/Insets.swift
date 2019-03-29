@@ -48,11 +48,11 @@ public struct Insets {
     }
 }
 
-public extension Insets {
+extension Insets {
     public static let zero = Insets(0)
 }
 
-public extension Insets {
+extension Insets {
     
     /// Set all edges of the inset to the same amount.
     public init(_ allEdgesAmount: CGFloat) {

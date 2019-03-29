@@ -30,7 +30,7 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     
     /// Access to auto layout constrains for the view
     public var layout: Layout { return Layout(self) }
