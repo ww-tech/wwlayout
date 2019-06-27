@@ -31,37 +31,6 @@
 
 import UIKit
 
-internal enum SizeClass {
-    case hcompact, hregular
-    case hcompact_vcompact, hcompact_vregular
-    case hregular_vcompact, hregular_vregular
-    case vcompact, vregular
-    
-    init?(horizontal: UIUserInterfaceSizeClass?, vertical: UIUserInterfaceSizeClass?) {
-        switch (horizontal, vertical) {
-        case (.compact?, .compact?): self = .hcompact_vcompact
-        case (.compact?, .regular?): self = .hcompact_vregular
-        case (.regular?, .compact?): self = .hregular_vcompact
-        case (.regular?, .regular?): self = .hregular_vregular
-        case (.compact?, _): self = .hcompact
-        case (.regular?, _): self = .hregular
-        case (_, .compact?): self = .vcompact
-        case (_, .regular?): self = .vregular
-        default: return nil
-        }
-    }
-    
-    func matches() -> Set<SizeClass> {
-        switch self {
-        case .hcompact_vcompact: return [.hcompact_vcompact, .hcompact, .vcompact]
-        case .hcompact_vregular: return [.hcompact_vregular, .hcompact, .vregular]
-        case .hregular_vcompact: return [.hregular_vcompact, .hregular, .vcompact]
-        case .hregular_vregular: return [.hregular_vregular, .hregular, .vregular]
-        case .hcompact, .hregular, .vcompact, .vregular: return [self]
-        }
-    }
-}
-
 /// Hidden UIView that gets added to a UIViewController's hierarchy,
 /// used to keep track of constraints that are tagged.
 /// The hidden view is only created when constraints are tagged.

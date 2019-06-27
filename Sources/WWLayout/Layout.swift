@@ -50,7 +50,7 @@ public final class Layout {
         view.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    init(_ view: UIView, priority: LayoutPriority = .required, horizontalSize: UIUserInterfaceSizeClass, verticalSize: UIUserInterfaceSizeClass) {
+    internal init(_ view: UIView, priority: LayoutPriority = .required, horizontalSize: UIUserInterfaceSizeClass, verticalSize: UIUserInterfaceSizeClass) {
         self.view = view
         self.priority = priority
         self.sizeClass = SizeClass(horizontal: horizontalSize, vertical: verticalSize)

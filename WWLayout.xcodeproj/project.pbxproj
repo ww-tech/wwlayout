@@ -20,6 +20,8 @@
 		798090D222C5492300C993C1 /* UIView+Containment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090CE22C5492300C993C1 /* UIView+Containment.swift */; };
 		798090D322C5492300C993C1 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090CF22C5492300C993C1 /* LayoutView.swift */; };
 		798090D422C5492300C993C1 /* UITraitCollection+Active.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090D022C5492300C993C1 /* UITraitCollection+Active.swift */; };
+		798090D822C54DA100C993C1 /* SizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090D722C54DA100C993C1 /* SizeClass.swift */; };
+		798090DA22C54EEA00C993C1 /* TaggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090D922C54EEA00C993C1 /* TaggingTests.swift */; };
 		798F252A1FD18FA4006E6A44 /* WWLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798F25201FD18FA4006E6A44 /* WWLayout.framework */; };
 		798F252F1FD18FA4006E6A44 /* BasicViewToSuperviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F252E1FD18FA4006E6A44 /* BasicViewToSuperviewTests.swift */; };
 		798F25311FD18FA4006E6A44 /* WWLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 798F25231FD18FA4006E6A44 /* WWLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +63,8 @@
 		798090CE22C5492300C993C1 /* UIView+Containment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Containment.swift"; sourceTree = "<group>"; };
 		798090CF22C5492300C993C1 /* LayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
 		798090D022C5492300C993C1 /* UITraitCollection+Active.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITraitCollection+Active.swift"; sourceTree = "<group>"; };
+		798090D722C54DA100C993C1 /* SizeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClass.swift; sourceTree = "<group>"; };
+		798090D922C54EEA00C993C1 /* TaggingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaggingTests.swift; sourceTree = "<group>"; };
 		798F25201FD18FA4006E6A44 /* WWLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		798F25231FD18FA4006E6A44 /* WWLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWLayout.h; sourceTree = "<group>"; };
 		798F25241FD18FA4006E6A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				790A031D1FDC95BC00F21655 /* LayoutRelation.swift */,
 				798090CF22C5492300C993C1 /* LayoutView.swift */,
 				798F25461FD1902F006E6A44 /* Insets.swift */,
+				798090D722C54DA100C993C1 /* SizeClass.swift */,
 				798090D022C5492300C993C1 /* UITraitCollection+Active.swift */,
 				798090CE22C5492300C993C1 /* UIView+Containment.swift */,
 				798F253F1FD19013006E6A44 /* UIView+Layout.swift */,
@@ -151,12 +156,13 @@
 			isa = PBXGroup;
 			children = (
 				798F252E1FD18FA4006E6A44 /* BasicViewToSuperviewTests.swift */,
-				79B8160A201A43A20062A088 /* SiblingTests.swift */,
-				79EE9EC520692C4400ADEBBB /* PriorityTests.swift */,
-				79EE9EC720692FC200ADEBBB /* InsetTests.swift */,
-				79E105322069BA1600E512AE /* SafeAreaTests.swift */,
 				7962C52B20EAA855005FB9A6 /* ConstraintArrayTests.swift */,
+				79EE9EC720692FC200ADEBBB /* InsetTests.swift */,
+				79EE9EC520692C4400ADEBBB /* PriorityTests.swift */,
+				79E105322069BA1600E512AE /* SafeAreaTests.swift */,
+				79B8160A201A43A20062A088 /* SiblingTests.swift */,
 				7963DF7A21B5962C00A49DC2 /* SwiftCompatibility.swift */,
+				798090D922C54EEA00C993C1 /* TaggingTests.swift */,
 				798F25301FD18FA4006E6A44 /* Info.plist */,
 			);
 			path = WWLayoutTests;
@@ -303,6 +309,7 @@
 				791432A5203B1272002783BE /* LayoutAnchor.swift in Sources */,
 				798F25421FD19013006E6A44 /* LayoutDimension.swift in Sources */,
 				798F25451FD19013006E6A44 /* UIView+Layout.swift in Sources */,
+				798090D822C54DA100C993C1 /* SizeClass.swift in Sources */,
 				790A03161FDC52A000F21655 /* Layout+Center.swift in Sources */,
 				798F25471FD1902F006E6A44 /* Insets.swift in Sources */,
 				798090D122C5492300C993C1 /* Layout+Activate.swift in Sources */,
@@ -319,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E105332069BA1600E512AE /* SafeAreaTests.swift in Sources */,
+				798090DA22C54EEA00C993C1 /* TaggingTests.swift in Sources */,
 				79EE9EC620692C4400ADEBBB /* PriorityTests.swift in Sources */,
 				7963DF7B21B5962C00A49DC2 /* SwiftCompatibility.swift in Sources */,
 				7962C52C20EAA855005FB9A6 /* ConstraintArrayTests.swift in Sources */,

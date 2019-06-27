@@ -1,7 +1,7 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Layout.swift
+//  Layout+Activate.swift
 //
 //  Created by Steven Grosmark on 5/4/18.
 //  Copyright © 2018 WW International, Inc.
