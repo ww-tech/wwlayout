@@ -34,20 +34,20 @@ extension Layout {
     
     /// Center the view relative to another
     @discardableResult
-    public func center(in other: Anchorable, axis: LayoutAxis = .xy, priority: LayoutPriority? = nil) -> Layout {
+    public func center(in other: Anchorable, axis: LayoutAxis = .xy, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
         if axis == .x || axis == .xy {
-            make(LayoutXEdge.center, .equal, toItem: other.anchor(.center), priority: priority)
+            make(LayoutXEdge.center, .equal, toItem: other.anchor(.center), priority: priority, tag: tag, active: active)
         }
         if axis == .y || axis == .xy {
-            make(LayoutYEdge.center, .equal, toItem: other.anchor(.center), priority: priority)
+            make(LayoutYEdge.center, .equal, toItem: other.anchor(.center), priority: priority, tag: tag, active: active)
          }
         return self
     }
     
     /// Center the view relative to something special
     @discardableResult
-    public func center(in special: SpecialAnchorable, axis: LayoutAxis = .xy, priority: LayoutPriority? = nil) -> Layout {
-        return center(in: special.anchorable(with: view), axis: axis, priority: priority)
+    public func center(in special: SpecialAnchorable, axis: LayoutAxis = .xy, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return center(in: special.anchorable(with: view), axis: axis, priority: priority, tag: tag, active: active)
     }
     
 }

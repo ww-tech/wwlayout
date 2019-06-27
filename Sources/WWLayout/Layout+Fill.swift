@@ -35,15 +35,15 @@ extension Layout {
     /// Set the view so it fills another view.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
     @discardableResult
-    public func fill(_ other: Anchorable, axis: LayoutAxis = .xy, inset: Insets? = nil, priority: LayoutPriority? = nil) -> Layout {
+    public func fill(_ other: Anchorable, axis: LayoutAxis = .xy, inset: Insets? = nil, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
         let inset = inset ?? .zero
         if axis == .x || axis == .xy {
-            make(LayoutXEdge.left, .equal, toItem: other.anchor(.left), constant: inset.left, priority: priority)
-            make(LayoutXEdge.right, .equal, toItem: other.anchor(.right), constant: -inset.right, priority: priority)
+            make(LayoutXEdge.left, .equal, toItem: other.anchor(.left), constant: inset.left, priority: priority, tag: tag, active: active)
+            make(LayoutXEdge.right, .equal, toItem: other.anchor(.right), constant: -inset.right, priority: priority, tag: tag, active: active)
         }
         if axis == .y || axis == .xy {
-            make(LayoutYEdge.top, .equal, toItem: other.anchor(.top), constant: inset.top, priority: priority)
-            make(LayoutYEdge.bottom, .equal, toItem: other.anchor(.bottom), constant: -inset.bottom, priority: priority)
+            make(LayoutYEdge.top, .equal, toItem: other.anchor(.top), constant: inset.top, priority: priority, tag: tag, active: active)
+            make(LayoutYEdge.bottom, .equal, toItem: other.anchor(.bottom), constant: -inset.bottom, priority: priority, tag: tag, active: active)
         }
         return self
     }
@@ -51,26 +51,26 @@ extension Layout {
     /// Set the view so it fills special anchors.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `special`, based on the `axis` parameter.
     @discardableResult
-    public func fill(_ special: SpecialAnchorable, axis: LayoutAxis = .xy, inset: Insets? = nil, priority: LayoutPriority? = nil) -> Layout {
-        return fill(special.anchorable(with: view), axis: axis, inset: inset, priority: priority)
+    public func fill(_ special: SpecialAnchorable, axis: LayoutAxis = .xy, inset: Insets? = nil, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return fill(special.anchorable(with: view), axis: axis, inset: inset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the view so it fills another view - excluding one edge.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
     @discardableResult
-    public func fill(_ other: Anchorable, except: LayoutFillEdge, inset: Insets? = nil, priority: LayoutPriority? = nil) -> Layout {
+    public func fill(_ other: Anchorable, except: LayoutFillEdge, inset: Insets? = nil, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
         let inset = inset ?? .zero
         if except != .left {
-            make(LayoutXEdge.left, .equal, toItem: other.anchor(.left), constant: inset.left, priority: priority)
+            make(LayoutXEdge.left, .equal, toItem: other.anchor(.left), constant: inset.left, priority: priority, tag: tag, active: active)
         }
         if except != .right {
-            make(LayoutXEdge.right, .equal, toItem: other.anchor(.right), constant: -inset.right, priority: priority)
+            make(LayoutXEdge.right, .equal, toItem: other.anchor(.right), constant: -inset.right, priority: priority, tag: tag, active: active)
         }
         if except != .top {
-            make(LayoutYEdge.top, .equal, toItem: other.anchor(.top), constant: inset.top, priority: priority)
+            make(LayoutYEdge.top, .equal, toItem: other.anchor(.top), constant: inset.top, priority: priority, tag: tag, active: active)
         }
         if except != .bottom {
-            make(LayoutYEdge.bottom, .equal, toItem: other.anchor(.bottom), constant: -inset.bottom, priority: priority)
+            make(LayoutYEdge.bottom, .equal, toItem: other.anchor(.bottom), constant: -inset.bottom, priority: priority, tag: tag, active: active)
         }
         return self
     }
@@ -78,8 +78,8 @@ extension Layout {
     /// Set the view so it fills special anchors - excluding one edge.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `special`, based on the `axis` parameter.
     @discardableResult
-    public func fill(_ special: SpecialAnchorable, except: LayoutFillEdge, inset: Insets? = nil, priority: LayoutPriority? = nil) -> Layout {
-        return fill(special.anchorable(with: view), except: except, inset: inset, priority: priority)
+    public func fill(_ special: SpecialAnchorable, except: LayoutFillEdge, inset: Insets? = nil, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return fill(special.anchorable(with: view), except: except, inset: inset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the view so it fills the width of another view, with a maximum allowed width.

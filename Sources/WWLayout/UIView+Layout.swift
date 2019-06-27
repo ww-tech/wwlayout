@@ -41,4 +41,22 @@ extension UIView {
         return Layout(self, priority: priority)
     }
     
+    /// Access to auto layout constraints for the view, at a specific priority and/or using a specific tag.
+    /// All constraints set up based on this Layout instance will be at the specified priority, and will use the `tag` specified.
+    public func layout(priority: LayoutPriority = .required, tag: Int = 0, active: Bool = true) -> Layout {
+        return Layout(self, priority: priority, tag: tag, active: active)
+    }
+    
+    public func layout(priority: LayoutPriority = .required, horizontalSize: UIUserInterfaceSizeClass) -> Layout {
+        return Layout(self, priority: priority, horizontalSize: horizontalSize, verticalSize: .unspecified)
+    }
+    
+    public func layout(priority: LayoutPriority = .required, verticalSize: UIUserInterfaceSizeClass) -> Layout {
+        return Layout(self, priority: priority, horizontalSize: .unspecified, verticalSize: verticalSize)
+    }
+    
+    public func layout(priority: LayoutPriority = .required, horizontalSize: UIUserInterfaceSizeClass, verticalSize: UIUserInterfaceSizeClass) -> Layout {
+        return Layout(self, priority: priority, horizontalSize: horizontalSize, verticalSize: verticalSize)
+    }
+    
 }

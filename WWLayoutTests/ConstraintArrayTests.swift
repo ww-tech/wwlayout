@@ -76,14 +76,6 @@ class ConstraintArrayTests: XCTestCase {
         for constraint in constraints {
             XCTAssertEqual(constraint.priority, .defaultHigh)
         }
-        
-        // when
-        constraints.tag(88)
-        
-        // then
-        for constraint in constraints {
-            XCTAssertEqual(constraint.tag, 88)
-        }
     }
     
 }

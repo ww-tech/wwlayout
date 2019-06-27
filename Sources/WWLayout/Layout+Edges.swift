@@ -51,8 +51,8 @@ extension Layout {
     ///
     ///     top(.lessOrEqual, to: view2)
     @discardableResult
-    public func top(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .top, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutYEdge.top, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func top(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .top, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutYEdge.top, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
@@ -73,127 +73,127 @@ extension Layout {
     ///
     ///     top(.lessOrEqual, to: .margins)
     @discardableResult
-    public func top(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .top, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return top(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func top(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .top, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return top(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the bottom edge relative to another view
     @discardableResult
-    public func bottom(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .bottom, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutYEdge.bottom, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func bottom(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .bottom, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutYEdge.bottom, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the bottom edge relative to a special set of anchors
     @discardableResult
-    public func bottom(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .bottom, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return bottom(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func bottom(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .bottom, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return bottom(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the center y edge relative to another view
     @discardableResult
-    public func centerY(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutYEdge.center, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func centerY(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutYEdge.center, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the center y edge relative to a special set of anchors
     @discardableResult
-    public func centerY(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return centerY(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func centerY(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return centerY(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the first baseline relative to another view
     @discardableResult
-    public func firstBaseline(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .firstBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutYEdge.firstBaseline, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func firstBaseline(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .firstBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutYEdge.firstBaseline, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the bottom edge relative to a special set of anchors
     @discardableResult
-    public func firstBaseline(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .firstBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return firstBaseline(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func firstBaseline(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .firstBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return firstBaseline(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the first baseline relative to another view
     @discardableResult
-    public func lastBaseline(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .lastBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutYEdge.lastBaseline, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func lastBaseline(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutYEdge = .lastBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutYEdge.lastBaseline, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the bottom edge relative to a special set of anchors
     @discardableResult
-    public func lastBaseline(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .lastBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return lastBaseline(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func lastBaseline(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutYEdge = .lastBaseline, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return lastBaseline(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     // MARK: - Horizontal edges
     
     /// Set the left edge relative to another view
     @discardableResult
-    public func left(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .left, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutXEdge.left, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func left(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .left, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutXEdge.left, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the left edge relative to a special set of anchors
     @discardableResult
-    public func left(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .left, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return left(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func left(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .left, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return left(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the right edge relative to another view
     @discardableResult
-    public func right(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .right, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutXEdge.right, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func right(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .right, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutXEdge.right, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the right edge relative to a special set of anchors
     @discardableResult
-    public func right(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .right, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return right(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func right(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .right, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return right(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the center x edge relative to another view
     @discardableResult
-    public func centerX(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutXEdge.center, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func centerX(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutXEdge.center, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the center x edge relative to a special set of anchors
     @discardableResult
-    public func centerX(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return centerX(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func centerX(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .center, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return centerX(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the leading edge relative to another view
     @discardableResult
-    public func leading(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .leading, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutXEdge.leading, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func leading(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .leading, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutXEdge.leading, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the leading edge relative to a special set of anchors
     @discardableResult
-    public func leading(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .leading, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return leading(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func leading(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .leading, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return leading(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Set the trailing edge relative to another view
     @discardableResult
-    public func trailing(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .trailing, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        make(LayoutXEdge.trailing, relation, toItem: other.anchor(edge), constant: offset, priority: priority)
+    public func trailing(_ relation: LayoutRelation = .equal, to other: Anchorable, edge: LayoutXEdge = .trailing, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        make(LayoutXEdge.trailing, relation, toItem: other.anchor(edge), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Set the trailing edge relative to a special set of anchors
     @discardableResult
-    public func trailing(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .trailing, offset: CGFloat = 0, priority: LayoutPriority? = nil) -> Layout {
-        return trailing(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority)
+    public func trailing(_ relation: LayoutRelation = .equal, to special: SpecialAnchorable, edge: LayoutXEdge = .trailing, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return trailing(relation, to: special.anchorable(with: view), edge: edge, offset: offset, priority: priority, tag: tag, active: active)
     }
     
 }

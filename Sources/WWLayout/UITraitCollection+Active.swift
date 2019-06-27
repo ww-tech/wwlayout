@@ -1,10 +1,11 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  AppDelegate.swift
+//  UITraitCollection+Active.swift
+//  WWLayout
 //
-//  Created by Steven Grosmark on 12/1/17.
-//  Copyright © 2018 WW International, Inc.
+//  Created by Steven Grosmark on 5/6/18.
+//  Copyright © 2018 WW International, Inc. All rights reserved.
 //
 //
 //  This source file is part of the WWLayout open source project
@@ -30,22 +31,19 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        if let window = window {
-            let firstViewController = SampleListViewController()
-            let navigationController = UINavigationController(rootViewController: firstViewController)
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
-        }
-        
-        return true
+extension UITraitCollection {
+    
+    internal func isActive(horizontalSize: UIUserInterfaceSizeClass?, verticalSize: UIUserInterfaceSizeClass?) -> Bool {
+        return isActive(horizontalSize: horizontalSize) && isActive(verticalSize: verticalSize)
     }
-
+    
+    internal func isActive(horizontalSize: UIUserInterfaceSizeClass?) -> Bool {
+        guard let hSize = horizontalSize else { return true }
+        return hSize == .unspecified || horizontalSizeClass == hSize
+    }
+    
+    internal func isActive(verticalSize: UIUserInterfaceSizeClass?) -> Bool {
+        guard let vSize = verticalSize else { return true }
+        return vSize == .unspecified || verticalSizeClass == vSize
+    }
 }

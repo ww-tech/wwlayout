@@ -16,6 +16,10 @@
 		791432A5203B1272002783BE /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791432A4203B1272002783BE /* LayoutAnchor.swift */; };
 		7962C52C20EAA855005FB9A6 /* ConstraintArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962C52B20EAA855005FB9A6 /* ConstraintArrayTests.swift */; };
 		7963DF7B21B5962C00A49DC2 /* SwiftCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963DF7A21B5962C00A49DC2 /* SwiftCompatibility.swift */; };
+		798090D122C5492300C993C1 /* Layout+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090CD22C5492300C993C1 /* Layout+Activate.swift */; };
+		798090D222C5492300C993C1 /* UIView+Containment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090CE22C5492300C993C1 /* UIView+Containment.swift */; };
+		798090D322C5492300C993C1 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090CF22C5492300C993C1 /* LayoutView.swift */; };
+		798090D422C5492300C993C1 /* UITraitCollection+Active.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798090D022C5492300C993C1 /* UITraitCollection+Active.swift */; };
 		798F252A1FD18FA4006E6A44 /* WWLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798F25201FD18FA4006E6A44 /* WWLayout.framework */; };
 		798F252F1FD18FA4006E6A44 /* BasicViewToSuperviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F252E1FD18FA4006E6A44 /* BasicViewToSuperviewTests.swift */; };
 		798F25311FD18FA4006E6A44 /* WWLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 798F25231FD18FA4006E6A44 /* WWLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,6 +57,10 @@
 		791432A4203B1272002783BE /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 		7962C52B20EAA855005FB9A6 /* ConstraintArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintArrayTests.swift; sourceTree = "<group>"; };
 		7963DF7A21B5962C00A49DC2 /* SwiftCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCompatibility.swift; sourceTree = "<group>"; };
+		798090CD22C5492300C993C1 /* Layout+Activate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layout+Activate.swift"; sourceTree = "<group>"; };
+		798090CE22C5492300C993C1 /* UIView+Containment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Containment.swift"; sourceTree = "<group>"; };
+		798090CF22C5492300C993C1 /* LayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
+		798090D022C5492300C993C1 /* UITraitCollection+Active.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITraitCollection+Active.swift"; sourceTree = "<group>"; };
 		798F25201FD18FA4006E6A44 /* WWLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		798F25231FD18FA4006E6A44 /* WWLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWLayout.h; sourceTree = "<group>"; };
 		798F25241FD18FA4006E6A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				798F253A1FD19013006E6A44 /* Layout.swift */,
+				798090CD22C5492300C993C1 /* Layout+Activate.swift */,
 				790A03151FDC52A000F21655 /* Layout+Center.swift */,
 				790A03191FDC53B300F21655 /* Layout+Fill.swift */,
 				790A031B1FDC53FE00F21655 /* Layout+Edges.swift */,
@@ -126,7 +135,10 @@
 				791432A4203B1272002783BE /* LayoutAnchor.swift */,
 				798F253D1FD19013006E6A44 /* LayoutPriority.swift */,
 				790A031D1FDC95BC00F21655 /* LayoutRelation.swift */,
+				798090CF22C5492300C993C1 /* LayoutView.swift */,
 				798F25461FD1902F006E6A44 /* Insets.swift */,
+				798090D022C5492300C993C1 /* UITraitCollection+Active.swift */,
+				798090CE22C5492300C993C1 /* UIView+Containment.swift */,
 				798F253F1FD19013006E6A44 /* UIView+Layout.swift */,
 				798F25231FD18FA4006E6A44 /* WWLayout.h */,
 				798F25241FD18FA4006E6A44 /* Info.plist */,
@@ -280,16 +292,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798090D422C5492300C993C1 /* UITraitCollection+Active.swift in Sources */,
 				790A031E1FDC95BC00F21655 /* LayoutRelation.swift in Sources */,
 				798F25411FD19013006E6A44 /* Anchorable.swift in Sources */,
+				798090D322C5492300C993C1 /* LayoutView.swift in Sources */,
 				790A031C1FDC53FE00F21655 /* Layout+Edges.swift in Sources */,
 				790A03201FDD776A00F21655 /* Layout+Size.swift in Sources */,
+				798090D222C5492300C993C1 /* UIView+Containment.swift in Sources */,
 				791432A32039E18A002783BE /* LayoutConstraint.swift in Sources */,
 				791432A5203B1272002783BE /* LayoutAnchor.swift in Sources */,
 				798F25421FD19013006E6A44 /* LayoutDimension.swift in Sources */,
 				798F25451FD19013006E6A44 /* UIView+Layout.swift in Sources */,
 				790A03161FDC52A000F21655 /* Layout+Center.swift in Sources */,
 				798F25471FD1902F006E6A44 /* Insets.swift in Sources */,
+				798090D122C5492300C993C1 /* Layout+Activate.swift in Sources */,
 				798F259C1FD1988A006E6A44 /* LayoutEdge.swift in Sources */,
 				798F25401FD19013006E6A44 /* Layout.swift in Sources */,
 				798F259A1FD19861006E6A44 /* LayoutAxis.swift in Sources */,
