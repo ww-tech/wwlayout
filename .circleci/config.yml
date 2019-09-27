@@ -28,7 +28,7 @@ commands:
           paths:
             - vendor/bundle
   
-  # Installs utilities from Homebrew, and gems from the Gemfile
+  # Installs all dependencies needed for a job
   install_dependencies:
     steps:
       - setup_ruby
