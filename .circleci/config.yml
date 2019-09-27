@@ -15,7 +15,7 @@ commands:
     steps:
       - run:
           name: Set Ruby version
-          command: echo "ruby-2.6" > ~/.ruby-version
+          command: echo "ruby-2.5" > ~/.ruby-version
       - run:
           name: Install bundler for older environments
           command: gem install bundler
@@ -47,7 +47,7 @@ commands:
         default: 'iPhone 8'
     steps:
       - run:
-          name: Build and run tests
+          name: "Build and run tests on << parameters.device >>, using Swift << parameters.swift >>"
           command: >-
             fastlane scan
             --project "WWLayout.xcodeproj"
