@@ -15,10 +15,7 @@ commands:
     steps:
       - run:
           name: Set Ruby version
-          command: echo "ruby-2.5" > ~/.ruby-version
-      - run:
-          name: Install bundler for older environments
-          command: gem install bundler
+          command: echo "ruby-2.6" > ~/.ruby-version
       - restore_cache:
           keys:
             - gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
@@ -67,17 +64,6 @@ jobs:
       - checkout
       - setup_ruby
 
-  build-and-test-swift32:
-    <<: *defaults
-    macos:
-      xcode: 10.0.0
-    steps:
-      - checkout
-      - install_dependencies
-      - build:
-          swift: '3.2'
-          device: 'iPhone SE'
-
   build-and-test-swift40through50:
     <<: *defaults
     macos:
@@ -87,7 +73,7 @@ jobs:
       - install_dependencies
       - build:
           swift: '4.0'
-          device: 'iPhone 6'
+          device: 'iPhone SE'
       - build:
           swift: '4.2'
           device: 'iPhone 8'
@@ -115,9 +101,6 @@ workflows:
   build-test:
     jobs:
       - build-gem-cache
-      - build-and-test-swift32:
-          requires:
-            - build-gem-cache
       - build-and-test-swift40through50:
           requires:
             - build-gem-cache

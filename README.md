@@ -8,7 +8,7 @@
     <a href="https://codeclimate.com/repos/5bd1ca9c535ea53834001d51/maintainability"><img src="https://api.codeclimate.com/v1/badges/d42334bce58294611b8b/maintainability" /></a>
     <a href="https://codeclimate.com/repos/5bd1ca9c535ea53834001d51/test_coverage"><img src="https://api.codeclimate.com/v1/badges/d42334bce58294611b8b/test_coverage" /></a>
     -->
-    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift%203%20--%204.2-compatible-brightgreen.svg?style=flat" /></a>
+    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift%204%20--%205.1-compatible-brightgreen.svg?style=flat" /></a>
 </p>
 
 Easy to write auto layout constraints, with minimal extensions to standard namespaces.
