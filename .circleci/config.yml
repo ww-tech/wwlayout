@@ -1,51 +1,110 @@
-# iOS CircleCI 2.0 configuration file
+# iOS CircleCI 2.1 configuration file
 #
-version: 2
-jobs:
-  build-and-test:
-    macos:
-      xcode: "10.0.0"
+version: 2.1
+
+defaults: &defaults
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: /Users/distiller/project/output
+    shell: /bin/bash --login -o pipefail
 
+commands:
+
+  # Sets Ruby version and installs all gems, using a cache
+  setup_ruby:
     steps:
-      - checkout
       - run:
           name: Set Ruby version
-          command: echo "ruby-2.4" > ~/.ruby-version
-      - run: bundle install
+          command: echo "ruby-2.6" > ~/.ruby-version
+      - restore_cache:
+          keys:
+            - gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - gem-cache-v1-{{ arch }}-{{ .Branch }}
       - run:
-          name: Setup Code Climate test-reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
+          name: Install dependencies in Gemfile
+          command: bundle install --path vendor/bundle
+      - save_cache:
+          key: gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+  
+  # Installs utilities from Homebrew, and gems from the Gemfile
+  install_dependencies:
+    steps:
+      - setup_ruby
+  
+  # Build the Example app & run the tests
+  build:
+    parameters:
+      swift:
+        type: string
+        default: '5.0'
+      device:
+        type: string
+        default: 'iPhone 8'
+    steps:
       - run:
-          name: Code Climate pre-build
-          command: ./cc-test-reporter before-build
-      - run:
-          name: Build and run tests
-          command: fastlane scan --code_coverage --output_directory output/scan
-          environment:
-            SCAN_DEVICE: iPhone X
-            SCAN_SCHEME: WWLayout
-      # Create cobertura.xml for Code Climate
-      - run:
-          name: Generate test coverage XML
-          command: slather coverage
-      - run:
-          name: Generate test coverage HTML
-          command: slather coverage --html --output-directory output/slather
-      - run:
-          name: Code Climate post-build
-          command: ./cc-test-reporter after-build --debug --coverage-input-type cobertura --exit-code $?
-      - store_artifacts:
-          path: /Users/distiller/project/output
-      - store_test_results:
-          path: /Users/distiller/project/output
+          name: "Build and run tests on << parameters.device >>, using Swift << parameters.swift >>"
+          command: >-
+            fastlane scan
+            --project "WWLayout.xcodeproj"
+            --scheme "WWLayout"
+            --device "<< parameters.device >>"
+            --xcargs "SWIFT_VERSION=<< parameters.swift >>"
+            --code_coverage
+            --output_directory output/scan
+
+jobs:
+
+  build-gem-cache:
+    <<: *defaults
+    macos:
+      xcode: 10.3.0
+    steps:
+      - checkout
+      - setup_ruby
+
+  build-and-test-swift40through50:
+    <<: *defaults
+    macos:
+      xcode: 10.3.0
+    steps:
+      - checkout
+      - install_dependencies
+      - build:
+          swift: '4.0'
+          device: 'iPhone SE'
+      - build:
+          swift: '4.2'
+          device: 'iPhone 8'
+      - build:
+          swift: '5.0'
+          device: 'iPhone X'
+
+  build-and-test-swift51:
+    <<: *defaults
+    macos:
+      xcode: 11.0.0
+    steps:
+      - checkout
+      - install_dependencies
+      - build:
+          swift: '5.1'
+          device: 'iPhone 6'
+      - build:
+          swift: '5.1'
+          device: 'iPhone 11'
 
 workflows:
   version: 2
+
   build-test:
     jobs:
-      - build-and-test
+      - build-gem-cache
+      - build-and-test-swift40through50:
+          requires:
+            - build-gem-cache
+      - build-and-test-swift51:
+          requires:
+            - build-gem-cache
+
