@@ -16,6 +16,9 @@ commands:
       - run:
           name: Set Ruby version
           command: echo "ruby-2.6" > ~/.ruby-version
+      - run:
+          name: Install bundler for older environments
+          command: gem install bundler
       - restore_cache:
           keys:
             - gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
