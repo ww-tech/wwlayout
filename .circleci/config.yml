@@ -64,7 +64,7 @@ jobs:
     steps:
       - checkout
       - install_dependencies
-      - build
+      - build:
           swift: '4.2'
 
   build-and-test-swift5:
@@ -74,7 +74,7 @@ jobs:
     steps:
       - checkout
       - install_dependencies
-      - build
+      - build:
           swift: '5.0'
 
   build-and-test-swift51:
@@ -84,7 +84,7 @@ jobs:
     steps:
       - checkout
       - install_dependencies
-      - build
+      - build:
           swift: '5.1'
 
 workflows:
