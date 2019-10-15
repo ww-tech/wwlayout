@@ -80,6 +80,13 @@ extension Layout {
         return size(relation, to: special.anchorable(with: view), multiplier: multiplier, priority: priority)
     }
     
+    /// Set the view's size to specified CGSize.
+    @discardableResult
+    public func size(_ relation: LayoutRelation = .equal, _ constraint: CGSize) -> Layout {
+        size(relation, to: constraint.width, constraint.height, priority: priority)
+        return self
+    }
+    
     /// Set the view's height to a constant value
     @discardableResult
     public func height(_ constant: CGFloat, priority: LayoutPriority? = nil) -> Layout {
