@@ -82,7 +82,7 @@ extension Layout {
     
     /// Set the view's size to specified CGSize.
     @discardableResult
-    public func size(_ relation: LayoutRelation = .equal, _ constraint: CGSize) -> Layout {
+    public func size(_ relation: LayoutRelation = .equal, _ constraint: CGSize, priority: LayoutPriority? = nil) -> Layout {
         size(relation, to: constraint.width, constraint.height, priority: priority)
         return self
     }
