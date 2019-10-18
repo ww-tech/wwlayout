@@ -178,7 +178,8 @@ class BasicViewToSuperviewTests: XCTestCase {
         checkConstrainedSize("size to container", width: 400, height: 400) { $0.layout.size(to: container) }
         checkConstrainedSize("size to container * .5", width: 200, height: 200) { $0.layout.size(to: container, multiplier: 0.5) }
         
-        checkConstrainedSize("size to CGSize", width: 200, height: 200) { $0.layout.size(.equal, CGSize(width: 200, height: 200)) }
+        checkConstrainedSize("size to CGSize", width: 200, height: 200) { $0.layout.size(.equal, to: CGSize(width: 200, height: 200)) }
+        checkConstrainedSize("size to CGSize", width: 300, height: 300) { $0.layout.size(CGSize(width: 300, height: 300)) }
     }
     
     private func checkConstrainedSize(_ descroiption: String, width: CGFloat? = nil, height: CGFloat? = nil, makeConstraints: (UIView) -> Void) {
