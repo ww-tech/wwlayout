@@ -144,7 +144,7 @@ extension Layout {
     ///     the `alignTo` edge to the same ot `other`.
     @discardableResult
     public func fillWidth(of other: Anchorable, inset: CGFloat, maximum: CGFloat, alignTo edge: LayoutXEdge = .center, priority: LayoutPriority? = nil) -> Layout {
-        fillWidth(of: other, inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority)
+        return fillWidth(of: other, inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority)
     }
     
     /// Set the view so it fills the width of another view, with a maximum allowed width.
