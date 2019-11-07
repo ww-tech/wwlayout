@@ -41,8 +41,8 @@ class BasicViewToSuperviewTests: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         container = nil
+        super.tearDown()
     }
     
     func testConstraintCounts() {
@@ -154,6 +154,8 @@ class BasicViewToSuperviewTests: XCTestCase {
         checkConstrainedSize("width matches parent", width: 400) { $0.layout.width(to: .superview) }
         checkConstrainedSize("height matches parent", height: 400) { $0.layout.height(to: .superview) }
         
+        checkConstrainedSize("width to container + 20", width: 420) { $0.layout.width(to: container.layout.width + 20) }
+        checkConstrainedSize("width to container - 20", width: 380) { $0.layout.width(to: container.layout.width - 20) }
         checkConstrainedSize("width to container * .5", width: 200) { $0.layout.width(to: container.layout.width * 0.5) }
         checkConstrainedSize("width to container * .5", width: 200) { $0.layout.width(to: container, multiplier: 0.5) }
         checkConstrainedSize("width to superview * .5", width: 200) { $0.layout.width(to: .superview, multiplier: 0.5) }
