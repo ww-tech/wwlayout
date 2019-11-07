@@ -32,6 +32,8 @@ import UIKit
 
 extension Layout {
     
+    // MARK: - Fill with optional axis
+    
     /// Set the view so it fills another view.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
     @discardableResult
@@ -48,12 +50,28 @@ extension Layout {
         return self
     }
     
+    /// Set the view so it fills another view.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ other: Anchorable, axis: LayoutAxis = .xy, inset: CGFloat, priority: LayoutPriority? = nil) -> Layout {
+        return fill(other, axis: axis, inset: Insets(inset), priority: priority)
+    }
+    
     /// Set the view so it fills special anchors.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `special`, based on the `axis` parameter.
     @discardableResult
     public func fill(_ special: SpecialAnchorable, axis: LayoutAxis = .xy, inset: Insets? = nil, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
         return fill(special.anchorable(with: view), axis: axis, inset: inset, priority: priority, tag: tag, active: active)
     }
+    
+    /// Set the view so it fills another view.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ special: SpecialAnchorable, axis: LayoutAxis = .xy, inset: CGFloat, priority: LayoutPriority? = nil) -> Layout {
+        return fill(special, axis: axis, inset: Insets(inset), priority: priority)
+    }
+    
+    // MARK: - Fill except one edge
     
     /// Set the view so it fills another view - excluding one edge.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
@@ -75,12 +93,28 @@ extension Layout {
         return self
     }
     
+    /// Set the view so it fills another view - excluding one edge.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ other: Anchorable, except: LayoutFillEdge, inset: CGFloat, priority: LayoutPriority? = nil) -> Layout {
+        return fill(other, except: except, inset: Insets(inset), priority: priority)
+    }
+    
     /// Set the view so it fills special anchors - excluding one edge.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `special`, based on the `axis` parameter.
     @discardableResult
     public func fill(_ special: SpecialAnchorable, except: LayoutFillEdge, inset: Insets? = nil, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
         return fill(special.anchorable(with: view), except: except, inset: inset, priority: priority, tag: tag, active: active)
     }
+    
+    /// Set the view so it fills another view - excluding one edge.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ special: SpecialAnchorable, except: LayoutFillEdge, inset: CGFloat, priority: LayoutPriority? = nil) -> Layout {
+        return fill(special, except: except, inset: Insets(inset), priority: priority)
+    }
+    
+    // MARK: - Fill width with maximum
     
     /// Set the view so it fills the width of another view, with a maximum allowed width.
     /// Will constrain:
@@ -101,6 +135,16 @@ extension Layout {
         case .trailing: trailing(to: other, offset: -inset.right)
         }
         return self
+    }
+    
+    /// Set the view so it fills the width of another view, with a maximum allowed width.
+    /// Will constrain:
+    ///     the left & right edges of the target view to the edges of `other` at `priority` - 1;
+    ///     the width to be <= `maximum`
+    ///     the `alignTo` edge to the same ot `other`.
+    @discardableResult
+    public func fillWidth(of other: Anchorable, inset: CGFloat, maximum: CGFloat, alignTo edge: LayoutXEdge = .center, priority: LayoutPriority? = nil) -> Layout {
+        return fillWidth(of: other, inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority)
     }
     
     /// Set the view so it fills the width of another view, with a maximum allowed width.
