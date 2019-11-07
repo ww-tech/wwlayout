@@ -31,7 +31,7 @@
 import XCTest
 @testable import WWLayout
 
-#if compiler(>=5)
+#if swift(>=4.2)
 #else
 extension UIViewController {
     func addChild(_ controller: UIViewController) {
