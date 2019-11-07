@@ -67,11 +67,12 @@ internal final class LayoutView: UIView {
         return taggedConstraints[tag, default:[]]
     }
     
-    /// Activate / Deactivate all constraints with a specific tag
+    /// Activate / deactivate all constraints with a specific tag
     internal func setActive(_ active: Bool, tag: Int) {
         taggedConstraints[tag, default:[]].setActive(active)
     }
     
+    /// Activate / deactivate all constraints when switching from one size class to another.
     internal func switchSizeClass(from fromSizeClass: SizeClass?, to toSizeClass: SizeClass?) {
         let activate = toSizeClass?.matches() ?? []
         if let old = fromSizeClass {

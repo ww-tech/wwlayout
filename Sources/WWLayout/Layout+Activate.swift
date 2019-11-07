@@ -32,22 +32,39 @@ import UIKit
 
 extension Layout {
     
+    /// Find all the constraints matching `tag`  in the view hierarchy that contains `view`
+    /// - Parameters:
+    ///   - view: one of the views in the target view hierarchy
+    ///   - tag: the tag to search for
     public static func findConstraints(in view: UIView, tag: Int) -> [NSLayoutConstraint] {
         guard tag != 0 && tag != Int.min else { return [] }
         let layoutView = LayoutView.layoutView(for: view)
         return layoutView.getConstraints(with: tag)
     }
     
+    /// Activate all constraints matching `tag`  in the view hierarchy that contains `view`
+    /// - Parameters:
+    ///   - view: one of the views in the target view hierarchy
+    ///   - tag: the tag to search for
     public static func activateConstraints(in view: UIView, tag: Int) {
         guard tag != 0 && tag != Int.min else { return }
         switchActiveConstraints(in: view, activeTag: tag)
     }
     
+    /// Deactivate all constraints matching `tag`  in the view hierarchy that contains `view`
+    /// - Parameters:
+    ///   - view: one of the views in the target view hierarchy
+    ///   - tag: the tag to search for
     public static func deactivateConstraints(in view: UIView, tag: Int) {
         guard tag != 0 && tag != Int.min else { return }
         switchActiveConstraints(in: view, deactiveTag: tag)
     }
     
+    /// Activate and/or deactivate all constraints matching the specified tags in the view hierarchy that contains `view`
+    /// - Parameters:
+    ///   - view: one of the views in the target view hierarchy
+    ///   - activeTag: constraints with this tag will be activated (default is nil)
+    ///   - deactiveTag: constraints with this tag will be deactivated (default is nil)
     public static func switchActiveConstraints(in view: UIView, activeTag: Int? = nil, deactiveTag: Int? = nil) {
         guard activeTag != deactiveTag else { return }
         let layoutView = LayoutView.layoutView(for: view)

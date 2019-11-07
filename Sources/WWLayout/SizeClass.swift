@@ -32,6 +32,7 @@ import UIKit
 
 /// Internal representation of the combination of horizontal and vertical UIUserInterfaceSizeClass values
 internal enum SizeClass {
+    
     case hcompact, hregular
     case hcompact_vcompact, hcompact_vregular
     case hregular_vcompact, hregular_vregular
@@ -51,6 +52,8 @@ internal enum SizeClass {
         }
     }
     
+    /// Retrieve the set of SizeClass values, that *this SizeClass.
+    /// E.g., a constraint that is active for `.hcompact_vcompact`, is also active for `.hcompact` or `.vcompact`.
     func matches() -> Set<SizeClass> {
         switch self {
         case .hcompact_vcompact: return [.hcompact_vcompact, .hcompact, .vcompact]
@@ -60,4 +63,5 @@ internal enum SizeClass {
         case .hcompact, .hregular, .vcompact, .vregular: return [self]
         }
     }
+    
 }
