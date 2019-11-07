@@ -55,7 +55,8 @@ public final class Layout {
         self.priority = priority
         self.sizeClass = SizeClass(horizontal: horizontalSize, vertical: verticalSize)
         tag = 0
-        active = UIApplication.shared.keyWindow?.traitCollection.isActive(horizontalSize: horizontalSize, verticalSize: verticalSize) != false
+        let traitEnvironment: UITraitEnvironment? = view.owningViewController() ?? UIApplication.shared.keyWindow
+        active = traitEnvironment?.traitCollection.isActive(horizontalSize: horizontalSize, verticalSize: verticalSize) != false
         newConstraints = []
         view.translatesAutoresizingMaskIntoConstraints = false
     }
