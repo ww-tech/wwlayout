@@ -31,6 +31,19 @@
 import XCTest
 @testable import WWLayout
 
+#if compiler(>=5)
+#else
+extension UIViewController {
+    func addChild(_ controller: UIViewController) {
+        addChildViewController(controller)
+    }
+    
+    func setOverrideTraitCollection(_ collection: UITraitCollection?, forChild controller: UIViewController) {
+        setOverrideTraitCollection(collection, forChildViewController: controller)
+    }
+}
+#endif
+
 class SizeClassTests: XCTestCase {
     
     private var rootController: UIViewController!
@@ -134,9 +147,11 @@ class SizeClassTests: XCTestCase {
         override(horizontal: .regular, vertical: .regular)
         
         // when
-        let regularConstraints = child.layout.size(.lessOrEqual, to: 300).constraints()
+        let regularConstraints = child.layout.size(300, priority: .high).constraints()
         let compactConstraints = child.layout(horizontalSize: .compact, verticalSize: .compact).size(200).constraints()
+        child.setNeedsLayout()
         child.layoutIfNeeded()
+        Layout.describeConstraints(in: child)
         
         // then
         XCTAssertEqual(child.constraints.count, 2)
