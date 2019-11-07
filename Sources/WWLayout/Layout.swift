@@ -156,6 +156,12 @@ public final class Layout {
     
     /// Stack a bunch of views vertically (note the `view` member property isn't used)
     @discardableResult
+    public func stack(_ views: UIView..., space: CGFloat = 0, below belowView: UIView? = nil, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+        return stack(views, space: space, below: belowView, offset: offset, priority: priority, tag: tag, active: active)
+    }
+    
+    /// Stack a bunch of views vertically (note the `view` member property isn't used)
+    @discardableResult
     public func stack(_ views: [UIView], space: CGFloat = 0, below belowView: UIView? = nil, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
         guard !views.isEmpty else { return self }
         
