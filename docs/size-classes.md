@@ -5,7 +5,7 @@ Size classes help you change the layout of views to adapt to various screen size
 Using size classes is pretty simple. Every `UIView` and `UIViewController` has access to a `traitCollection` property, which contains both the horizontal and vertical size classes. You can use these when setting up your views to properly lay out for the current display. Typically, you'll want to just check the horizontal size class, as this is the one that will change when split view is activated on iPad.
 
 ## Adapting to Changes in Size Classes
-It's also important to properly adjust views when the size class changes. This occurs when your app is used in multitasking split view on iPad. This can cause the size class to change from `regular` to `compact`.
+It's also important to properly adjust views when the size class changes. This occurs when your app is used in multitasking split view on iPad or when the device is rotated. This can cause the size class to change from `regular` to `compact`.
 
 In order to respond to these changes, your `UIView` or `UIViewController` needs to override `traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)`, which is called every time the trait collection changes. Inside this method, you want to write something like this:
 
