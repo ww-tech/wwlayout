@@ -38,7 +38,7 @@ import UIKit
  In portrait, there will be a square above some text.
  In landscape, there will be a square with text to the right.
  */
-public class TaggingSample : UIViewController {
+public class TaggingSample: UIViewController {
     
     let insetView = UIView()
     let boxView1 = UIView()
@@ -48,6 +48,7 @@ public class TaggingSample : UIViewController {
     var toggle = true
     
     override public func viewDidLoad() {
+        super.viewDidLoad()
         setupViews()
         setupConstraints()
     }
@@ -106,7 +107,7 @@ public class TaggingSample : UIViewController {
     }
     
     @objc private func buttonTapped() {
-        toggle = !toggle
+        toggle.toggle()
         UIView.animate(withDuration: 0.3) {
             Layout.switchActiveConstraints(in: self.view, activeTag: self.toggle ? 1 : 2, deactiveTag: self.toggle ? 2 : 1)
             self.view.layoutIfNeeded()

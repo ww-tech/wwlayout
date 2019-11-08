@@ -40,7 +40,10 @@ public final class Layout {
     private let sizeClass: SizeClass?
     private let active: Bool
     
-    internal init(_ view: UIView, priority: LayoutPriority = .required, tag: Int = 0, active: Bool = true) {
+    internal init(_ view: UIView,
+                  priority: LayoutPriority = .required,
+                  tag: Int = 0,
+                  active: Bool = true) {
         self.view = view
         self.priority = priority
         self.tag = tag
@@ -50,7 +53,10 @@ public final class Layout {
         view.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    internal init(_ view: UIView, priority: LayoutPriority = .required, horizontalSize: UIUserInterfaceSizeClass, verticalSize: UIUserInterfaceSizeClass) {
+    internal init(_ view: UIView,
+                  priority: LayoutPriority = .required,
+                  horizontalSize: UIUserInterfaceSizeClass,
+                  verticalSize: UIUserInterfaceSizeClass) {
         self.view = view
         self.priority = priority
         self.sizeClass = SizeClass(horizontal: horizontalSize, vertical: verticalSize)
@@ -64,27 +70,43 @@ public final class Layout {
     // MARK: - Internal constraint creation
     
     /// Helper to constrain edge (==|<=|>=) rhs * multiplier + constant
-    internal func make<Edge: LayoutEdge, Anchor: LayoutAnchor>(_ edge: Edge,
-                                                               _ relation: LayoutRelation,
-                                                               toItem rhs: Anchor,
-                                                               multiplier: CGFloat = 1.0,
-                                                               constant: CGFloat = 0.0,
-                                                               priority: LayoutPriority? = nil,
-                                                               tag: Int? = nil,
-                                                               active: Bool? = nil) where Edge.Axis == Anchor.Axis {
-        let constraint = LayoutConstraint(item: view, attribute: edge.attribute, relatedBy: relation.nsRelation, toItem: rhs.item, attribute: rhs.attribute, multiplier: multiplier, constant: constant)
+    internal func make<Edge, Anchor>(_ edge: Edge,
+                                     _ relation: LayoutRelation,
+                                     toItem rhs: Anchor,
+                                     multiplier: CGFloat = 1.0,
+                                     constant: CGFloat = 0.0,
+                                     priority: LayoutPriority? = nil,
+                                     tag: Int? = nil,
+                                     active: Bool? = nil)
+        where Edge: LayoutEdge, Anchor: LayoutAnchor, Edge.Axis == Anchor.Axis {
+        
+        let constraint = LayoutConstraint(item: view,
+                                          attribute: edge.attribute,
+                                          relatedBy: relation.nsRelation,
+                                          toItem: rhs.item,
+                                          attribute: rhs.attribute,
+                                          multiplier: multiplier,
+                                          constant: constant)
         constraint.tag = tag ?? self.tag
         collect(constraint, at: priority, active: active)
     }
     
     /// Helper to constrain edge (==|<=|>=) constant
-    internal func make<Edge: LayoutEdge>(_ edge: Edge,
-                                         _ relation: LayoutRelation,
-                                         to constant: CGFloat,
-                                         priority: LayoutPriority? = nil,
-                                         tag: Int? = nil,
-                                         active: Bool? = nil) {
-        let constraint = LayoutConstraint(item: view, attribute: edge.attribute, relatedBy: relation.nsRelation, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
+    internal func make<Edge>(_ edge: Edge,
+                             _ relation: LayoutRelation,
+                             to constant: CGFloat,
+                             priority: LayoutPriority? = nil,
+                             tag: Int? = nil,
+                             active: Bool? = nil)
+        where Edge: LayoutEdge {
+        
+        let constraint = LayoutConstraint(item: view,
+                                          attribute: edge.attribute,
+                                          relatedBy: relation.nsRelation,
+                                          toItem: nil,
+                                          attribute: .notAnAttribute,
+                                          multiplier: 1.0,
+                                          constant: constant)
         constraint.tag = tag ?? self.tag
         collect(constraint, at: priority, active: active)
     }
@@ -96,12 +118,21 @@ public final class Layout {
                        priority: LayoutPriority? = nil,
                        tag: Int? = nil,
                        active: Bool? = nil) {
-        let constraint = LayoutConstraint(item: view, attribute: edge.attribute, relatedBy: relation.nsRelation, toItem: dimension.item, attribute: dimension.attribute, multiplier: dimension.multiplier, constant: dimension.offset)
+        
+        let constraint = LayoutConstraint(item: view,
+                                          attribute: edge.attribute,
+                                          relatedBy: relation.nsRelation,
+                                          toItem: dimension.item,
+                                          attribute: dimension.attribute,
+                                          multiplier: dimension.multiplier,
+                                          constant: dimension.offset)
         constraint.tag = tag ?? self.tag
         collect(constraint, at: priority, active: active)
     }
     
-    private func collect(_ constraint: LayoutConstraint, at priority: LayoutPriority? = nil, active: Bool? = nil) {
+    private func collect(_ constraint: LayoutConstraint,
+                         at priority: LayoutPriority? = nil,
+                         active: Bool? = nil) {
         newConstraints.append(constraint.set(priority: priority ?? self.priority, active: active ?? self.active))
         if constraint.tag != 0 {
             layoutView.add(constraint)
@@ -128,14 +159,22 @@ public final class Layout {
     
     /// Position the view below the bottom edge of another view
     @discardableResult
-    public func below(_ other: UIView, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+    public func below(_ other: UIView,
+                      offset: CGFloat = 0,
+                      priority: LayoutPriority? = nil,
+                      tag: Int? = nil,
+                      active: Bool? = nil) -> Layout {
         make(LayoutYEdge.top, .equal, toItem: other.anchor(.bottom), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
     
     /// Position the view below the top edge of another view
     @discardableResult
-    public func below(topOf other: UIView, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+    public func below(topOf other: UIView,
+                      offset: CGFloat = 0,
+                      priority: LayoutPriority? = nil,
+                      tag: Int? = nil,
+                      active: Bool? = nil) -> Layout {
         make(LayoutYEdge.top, .equal, toItem: other.anchor(.top), constant: offset, priority: priority, tag: tag, active: active)
         return self
     }
@@ -143,26 +182,46 @@ public final class Layout {
     /// Position another view after this view.
     /// Returns the layout for the other view.
     @discardableResult
-    public func followedBy(_ other: UIView, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+    public func followedBy(_ other: UIView,
+                           offset: CGFloat = 0,
+                           priority: LayoutPriority? = nil,
+                           tag: Int? = nil,
+                           active: Bool? = nil) -> Layout {
         return other.layout.below(view, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Position another view after this view.
     /// Returns the layout for the other view.
     @discardableResult
-    public func followedBy(_ otherLayout: Layout, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+    public func followedBy(_ otherLayout: Layout,
+                           offset: CGFloat = 0,
+                           priority: LayoutPriority? = nil,
+                           tag: Int? = nil,
+                           active: Bool? = nil) -> Layout {
         return otherLayout.below(view, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Stack a bunch of views vertically (note the `view` member property isn't used)
     @discardableResult
-    public func stack(_ views: UIView..., space: CGFloat = 0, below belowView: UIView? = nil, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+    public func stack(_ views: UIView...,
+                      space: CGFloat = 0,
+                      below belowView: UIView? = nil,
+                      offset: CGFloat = 0,
+                      priority: LayoutPriority? = nil,
+                      tag: Int? = nil,
+                      active: Bool? = nil) -> Layout {
         return stack(views, space: space, below: belowView, offset: offset, priority: priority, tag: tag, active: active)
     }
     
     /// Stack a bunch of views vertically (note the `view` member property isn't used)
     @discardableResult
-    public func stack(_ views: [UIView], space: CGFloat = 0, below belowView: UIView? = nil, offset: CGFloat = 0, priority: LayoutPriority? = nil, tag: Int? = nil, active: Bool? = nil) -> Layout {
+    public func stack(_ views: [UIView],
+                      space: CGFloat = 0,
+                      below belowView: UIView? = nil,
+                      offset: CGFloat = 0,
+                      priority: LayoutPriority? = nil,
+                      tag: Int? = nil,
+                      active: Bool? = nil) -> Layout {
         guard !views.isEmpty else { return self }
         
         if let belowView = belowView, let first = views.first {

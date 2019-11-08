@@ -99,8 +99,10 @@ internal final class LayoutView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("unsupported") }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        let newSizeClass = SizeClass(horizontal: traitCollection.horizontalSizeClass, vertical: traitCollection.verticalSizeClass)
-        let oldSizeClass = SizeClass(horizontal: previousTraitCollection?.horizontalSizeClass, vertical: previousTraitCollection?.verticalSizeClass)
+        let newSizeClass = SizeClass(horizontal: traitCollection.horizontalSizeClass,
+                                     vertical: traitCollection.verticalSizeClass)
+        let oldSizeClass = SizeClass(horizontal: previousTraitCollection?.horizontalSizeClass,
+                                     vertical: previousTraitCollection?.verticalSizeClass)
         switchSizeClass(from: oldSizeClass, to: newSizeClass)
     }
 }

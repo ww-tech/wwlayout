@@ -65,7 +65,9 @@ extension Layout {
     ///   - view: one of the views in the target view hierarchy
     ///   - activeTag: constraints with this tag will be activated (default is nil)
     ///   - deactiveTag: constraints with this tag will be deactivated (default is nil)
-    public static func switchActiveConstraints(in view: UIView, activeTag: Int? = nil, deactiveTag: Int? = nil) {
+    public static func switchActiveConstraints(in view: UIView,
+                                               activeTag: Int? = nil,
+                                               deactiveTag: Int? = nil) {
         guard activeTag != deactiveTag else { return }
         let layoutView = LayoutView.layoutView(for: view)
         if let deactiveTag = deactiveTag { layoutView.setActive(false, tag: deactiveTag) }

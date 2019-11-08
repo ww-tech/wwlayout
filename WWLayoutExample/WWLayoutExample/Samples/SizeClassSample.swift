@@ -38,13 +38,14 @@ import UIKit
  In portrait, there will be a square above some text.
  In landscape, there will be a square with text to the right.
  */
-public class SizeClassSample : UIViewController {
+public class SizeClassSample: UIViewController {
     
     let insetView = UIView()
     let squareView = UIView()
     let label = UILabel()
     
     override public func viewDidLoad() {
+        super.viewDidLoad()
         setupViews()
         setupConstraints()
     }

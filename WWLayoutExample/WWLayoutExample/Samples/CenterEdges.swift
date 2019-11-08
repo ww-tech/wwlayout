@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-public class CenterEdges : SampleViewController {
+public class CenterEdges: SampleViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()

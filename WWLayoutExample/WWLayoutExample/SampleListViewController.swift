@@ -46,7 +46,7 @@ class SampleListViewController: UIViewController {
         super.viewDidLoad()
         
         title = "WW Layout Samples"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"Samples", style:.plain, target:nil, action:nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Samples", style: .plain, target: nil, action: nil)
         
         setupViews()
         setupConstraints()
@@ -57,14 +57,14 @@ class SampleListViewController: UIViewController {
         
         items = [
             Item(label: "Basic Sample", controller: { return BasicSample() }),
-            Item(label: "Safe Area Sample", controller: { return self.wrapInTabBar(SafeAreaSample()) } ),
-            Item(label: "Layout Margins Sample", controller: { return self.wrapInTabBar(LayoutMarginsSample()) } ),
-            Item(label: "Three Edges", controller: { return ThreeEdges() } ),
-            Item(label: "Fill Width", controller: { return FillWidthSample() } ),
-            Item(label: "Center Edges", controller: { return CenterEdges() } ),
-            Item(label: "Baseline Edges", controller: { return Baselines() } ),
-            Item(label: "Tags", controller: { return TaggingSample() } ),
-            Item(label: "Size Classes", controller: { return SizeClassSample() } )
+            Item(label: "Safe Area Sample", controller: { return self.wrapInTabBar(SafeAreaSample()) }),
+            Item(label: "Layout Margins Sample", controller: { return self.wrapInTabBar(LayoutMarginsSample()) }),
+            Item(label: "Three Edges", controller: { return ThreeEdges() }),
+            Item(label: "Fill Width", controller: { return FillWidthSample() }),
+            Item(label: "Center Edges", controller: { return CenterEdges() }),
+            Item(label: "Baseline Edges", controller: { return Baselines() }),
+            Item(label: "Tags", controller: { return TaggingSample() }),
+            Item(label: "Size Classes", controller: { return SizeClassSample() })
         ]
         
         tableView = UITableView()
