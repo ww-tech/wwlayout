@@ -43,6 +43,7 @@ public class SizeClassSample: UIViewController {
     let insetView = UIView()
     let squareView = UIView()
     let label = UILabel()
+    let hintLabel = UILabel()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,12 @@ public class SizeClassSample: UIViewController {
         label.textColor = .black
         
         insetView.addSubview(label)
+        
+        hintLabel.numberOfLines = 0
+        hintLabel.text = "rotate the device"
+        hintLabel.textColor = .black
+        hintLabel.textAlignment = .center
+        squareView.addSubview(hintLabel)
     }
     
     private func setupConstraints() {
@@ -84,7 +91,10 @@ public class SizeClassSample: UIViewController {
             .width(toHeight: 1.0)
             .size(260, priority: .required - 1)
         
-        // portrait
+        hintLabel.layout
+            .fill(.superview, inset: 10)
+        
+        // phone portrait, all tablet
         squareView.layout(verticalSize: .regular)
             .center(in: insetView, axis: .x)
         
@@ -92,7 +102,7 @@ public class SizeClassSample: UIViewController {
             .fill(insetView, axis: .x, inset: 20)
             .below(squareView, offset: 20)
         
-        // landscape
+        // phone landscape
         squareView.layout(verticalSize: .compact)
             .leading(to: insetView, offset: 10)
         
