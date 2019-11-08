@@ -17,8 +17,6 @@
 		798F25551FD190AB006E6A44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F25541FD190AB006E6A44 /* AppDelegate.swift */; };
 		798F25571FD190AB006E6A44 /* SampleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F25561FD190AB006E6A44 /* SampleListViewController.swift */; };
 		798F255F1FD190AB006E6A44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798F255D1FD190AB006E6A44 /* LaunchScreen.storyboard */; };
-		798F256A1FD190AB006E6A44 /* WWLayoutExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F25691FD190AB006E6A44 /* WWLayoutExampleTests.swift */; };
-		798F25751FD190AB006E6A44 /* WWLayoutExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F25741FD190AB006E6A44 /* WWLayoutExampleUITests.swift */; };
 		798F259F1FD19BEF006E6A44 /* BasicSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F259E1FD19BEF006E6A44 /* BasicSample.swift */; };
 		79AA4F97209F58E700654994 /* SizeClassSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA4F96209F58E700654994 /* SizeClassSample.swift */; };
 		79BCF2862009075D00D58A7A /* LayoutMarginsSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BCF2852009075D00D58A7A /* LayoutMarginsSample.swift */; };
@@ -41,20 +39,6 @@
 			remoteGlobalIDString = 798F25291FD18FA4006E6A44;
 			remoteInfo = WWLayoutTests;
 		};
-		798F25661FD190AB006E6A44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 798F25491FD190AB006E6A44 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 798F25501FD190AB006E6A44;
-			remoteInfo = WWLayoutExample;
-		};
-		798F25711FD190AB006E6A44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 798F25491FD190AB006E6A44 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 798F25501FD190AB006E6A44;
-			remoteInfo = WWLayoutExample;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -70,12 +54,6 @@
 		798F25561FD190AB006E6A44 /* SampleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListViewController.swift; sourceTree = "<group>"; };
 		798F255E1FD190AB006E6A44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		798F25601FD190AB006E6A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		798F25651FD190AB006E6A44 /* WWLayoutExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WWLayoutExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		798F25691FD190AB006E6A44 /* WWLayoutExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWLayoutExampleTests.swift; sourceTree = "<group>"; };
-		798F256B1FD190AB006E6A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		798F25701FD190AB006E6A44 /* WWLayoutExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WWLayoutExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		798F25741FD190AB006E6A44 /* WWLayoutExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWLayoutExampleUITests.swift; sourceTree = "<group>"; };
-		798F25761FD190AB006E6A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		798F259E1FD19BEF006E6A44 /* BasicSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSample.swift; sourceTree = "<group>"; };
 		79AA4F96209F58E700654994 /* SizeClassSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClassSample.swift; sourceTree = "<group>"; };
 		79BCF2852009075D00D58A7A /* LayoutMarginsSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutMarginsSample.swift; sourceTree = "<group>"; };
@@ -89,20 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7905B0F61FD2ADEA001E8B07 /* WWLayout.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		798F25621FD190AB006E6A44 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		798F256D1FD190AB006E6A44 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +87,6 @@
 			children = (
 				7905B0ED1FD2ADD7001E8B07 /* WWLayout.xcodeproj */,
 				798F25531FD190AB006E6A44 /* WWLayoutExample */,
-				798F25681FD190AB006E6A44 /* WWLayoutExampleTests */,
-				798F25731FD190AB006E6A44 /* WWLayoutExampleUITests */,
 				798F25521FD190AB006E6A44 /* Products */,
 				798F25951FD19161006E6A44 /* Frameworks */,
 			);
@@ -134,8 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				798F25511FD190AB006E6A44 /* WWLayoutExample.app */,
-				798F25651FD190AB006E6A44 /* WWLayoutExampleTests.xctest */,
-				798F25701FD190AB006E6A44 /* WWLayoutExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,24 +111,6 @@
 				798F25601FD190AB006E6A44 /* Info.plist */,
 			);
 			path = WWLayoutExample;
-			sourceTree = "<group>";
-		};
-		798F25681FD190AB006E6A44 /* WWLayoutExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				798F25691FD190AB006E6A44 /* WWLayoutExampleTests.swift */,
-				798F256B1FD190AB006E6A44 /* Info.plist */,
-			);
-			path = WWLayoutExampleTests;
-			sourceTree = "<group>";
-		};
-		798F25731FD190AB006E6A44 /* WWLayoutExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				798F25741FD190AB006E6A44 /* WWLayoutExampleUITests.swift */,
-				798F25761FD190AB006E6A44 /* Info.plist */,
-			);
-			path = WWLayoutExampleUITests;
 			sourceTree = "<group>";
 		};
 		798F25951FD19161006E6A44 /* Frameworks */ = {
@@ -216,42 +158,6 @@
 			productReference = 798F25511FD190AB006E6A44 /* WWLayoutExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		798F25641FD190AB006E6A44 /* WWLayoutExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 798F257C1FD190AB006E6A44 /* Build configuration list for PBXNativeTarget "WWLayoutExampleTests" */;
-			buildPhases = (
-				798F25611FD190AB006E6A44 /* Sources */,
-				798F25621FD190AB006E6A44 /* Frameworks */,
-				798F25631FD190AB006E6A44 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				798F25671FD190AB006E6A44 /* PBXTargetDependency */,
-			);
-			name = WWLayoutExampleTests;
-			productName = WWLayoutExampleTests;
-			productReference = 798F25651FD190AB006E6A44 /* WWLayoutExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		798F256F1FD190AB006E6A44 /* WWLayoutExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 798F257F1FD190AB006E6A44 /* Build configuration list for PBXNativeTarget "WWLayoutExampleUITests" */;
-			buildPhases = (
-				798F256C1FD190AB006E6A44 /* Sources */,
-				798F256D1FD190AB006E6A44 /* Frameworks */,
-				798F256E1FD190AB006E6A44 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				798F25721FD190AB006E6A44 /* PBXTargetDependency */,
-			);
-			name = WWLayoutExampleUITests;
-			productName = WWLayoutExampleUITests;
-			productReference = 798F25701FD190AB006E6A44 /* WWLayoutExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,18 +172,6 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
-					};
-					798F25641FD190AB006E6A44 = {
-						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 798F25501FD190AB006E6A44;
-					};
-					798F256F1FD190AB006E6A44 = {
-						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 798F25501FD190AB006E6A44;
 					};
 				};
 			};
@@ -301,8 +195,6 @@
 			projectRoot = "";
 			targets = (
 				798F25501FD190AB006E6A44 /* WWLayoutExample */,
-				798F25641FD190AB006E6A44 /* WWLayoutExampleTests */,
-				798F256F1FD190AB006E6A44 /* WWLayoutExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -331,20 +223,6 @@
 			files = (
 				7987270D21B7FEC300C73236 /* Assets.xcassets in Resources */,
 				798F255F1FD190AB006E6A44 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		798F25631FD190AB006E6A44 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		798F256E1FD190AB006E6A44 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,36 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		798F25611FD190AB006E6A44 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				798F256A1FD190AB006E6A44 /* WWLayoutExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		798F256C1FD190AB006E6A44 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				798F25751FD190AB006E6A44 /* WWLayoutExampleUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		798F25671FD190AB006E6A44 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 798F25501FD190AB006E6A44 /* WWLayoutExample */;
-			targetProxy = 798F25661FD190AB006E6A44 /* PBXContainerItemProxy */;
-		};
-		798F25721FD190AB006E6A44 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 798F25501FD190AB006E6A44 /* WWLayoutExample */;
-			targetProxy = 798F25711FD190AB006E6A44 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		798F255D1FD190AB006E6A44 /* LaunchScreen.storyboard */ = {
@@ -558,7 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -576,70 +425,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		798F257D1FD190AB006E6A44 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WWLayoutExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WWLayoutExample.app/WWLayoutExample";
-			};
-			name = Debug;
-		};
-		798F257E1FD190AB006E6A44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WWLayoutExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WWLayoutExample.app/WWLayoutExample";
-			};
-			name = Release;
-		};
-		798F25801FD190AB006E6A44 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WWLayoutExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WWLayoutExample;
-			};
-			name = Debug;
-		};
-		798F25811FD190AB006E6A44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WWLayoutExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WWLayoutExample;
 			};
 			name = Release;
 		};
@@ -660,24 +447,6 @@
 			buildConfigurations = (
 				798F257A1FD190AB006E6A44 /* Debug */,
 				798F257B1FD190AB006E6A44 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		798F257C1FD190AB006E6A44 /* Build configuration list for PBXNativeTarget "WWLayoutExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				798F257D1FD190AB006E6A44 /* Debug */,
-				798F257E1FD190AB006E6A44 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		798F257F1FD190AB006E6A44 /* Build configuration list for PBXNativeTarget "WWLayoutExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				798F25801FD190AB006E6A44 /* Debug */,
-				798F25811FD190AB006E6A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
