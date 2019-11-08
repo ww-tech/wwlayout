@@ -251,3 +251,24 @@ public final class Layout {
         return self
     }
 }
+
+extension UITraitCollection {
+    
+    // `UITraitCollection.current` is only available in iOS 13.
+    // Since the swift 5.1 compiler shipped with Xcode 11 along with iOS 13,
+    // we'll key off that as our pre-processor test.
+    // But, in order to use `compiler()`, we need to be compiling swift >= 4.2.
+    #if swift(>=4.2)
+        #if compiler(>=5.1)
+        #else
+            fileprivate class var current: UITraitCollection {
+                return UIScreen.main.traitCollection
+            }
+        #endif
+    #else
+        fileprivate class var current: UITraitCollection {
+            return UIScreen.main.traitCollection
+        }
+    #endif
+    
+}
