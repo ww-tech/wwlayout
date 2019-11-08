@@ -53,7 +53,7 @@ By specifying the horizontal or vertical size class that a set of constraints ap
 ```
 
 ## Accessing Size Class Outside of `UIView` and `UIViewController`
-There might be some cases where you want to access the current size class outside of the classes where `traitCollection` is defined, such as in a model object. While iOS 13 introduced the `UITraitCollection.current` property, we need a solution that works on all supported OS versions. 
+There might be some cases where you want to access the current size class outside of the classes where `traitCollection` is defined, such as in a model object. While iOS 13 introduced the `UITraitCollection.current` property, you might need a solution that works on all supported OS versions. 
 
 There are 2 ways to go about this. You can either pass along the trait collection from the `UIView` or you can access it directly by calling `UIScreen.main.traitCollection`. Either way will get you the same results, so choose whichever way works best with your code.
 
