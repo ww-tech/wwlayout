@@ -61,8 +61,22 @@ public final class Layout {
         self.priority = priority
         self.sizeClass = SizeClass(horizontal: horizontalSize, vertical: verticalSize)
         tag = 0
-        let traitEnvironment: UITraitEnvironment? = view.owningViewController() ?? UIApplication.shared.keyWindow
-        active = traitEnvironment?.traitCollection.isActive(horizontalSize: horizontalSize, verticalSize: verticalSize) != false
+        
+        // Figure out the current size traits for the view.
+        // Child view controllers can have their traits overridden, so start there.
+        var currentTraits: UITraitCollection
+        if #available(iOS 13.0, *) {
+            currentTraits = view.owningViewController()?.traitCollection ?? .current
+        }
+        else {
+            let traitEnvironment: UITraitEnvironment =
+                view.owningViewController()
+                    ?? UIApplication.shared.keyWindow
+                    ?? UIScreen.main
+            currentTraits = traitEnvironment.traitCollection
+        }
+        
+        active = currentTraits.isActive(horizontalSize: horizontalSize, verticalSize: verticalSize)
         newConstraints = []
         view.translatesAutoresizingMaskIntoConstraints = false
     }
