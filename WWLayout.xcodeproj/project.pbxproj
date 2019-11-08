@@ -196,7 +196,7 @@
 			buildConfigurationList = 798F25341FD18FA4006E6A44 /* Build configuration list for PBXNativeTarget "WWLayout" */;
 			buildPhases = (
 				798F251B1FD18FA4006E6A44 /* Sources */,
-				B0FA021421971368005D4BA3 /* Swiftlint */,
+				7990EB912375A40E00D9ECDC /* SwiftLint */,
 				798F251C1FD18FA4006E6A44 /* Frameworks */,
 				798F251D1FD18FA4006E6A44 /* Headers */,
 				798F251E1FD18FA4006E6A44 /* Resources */,
@@ -286,19 +286,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B0FA021421971368005D4BA3 /* Swiftlint */ = {
+		7990EB912375A40E00D9ECDC /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = Swiftlint;
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config \"${PROJECT_DIR}/.swiftlint.yml\" --path \"${PROJECT_DIR}/Sources/\"\n  swiftlint --config \"${PROJECT_DIR}/.swiftlint.yml\" --path \"${PROJECT_DIR}/WWLayoutTests/\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -416,6 +420,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -470,6 +475,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
