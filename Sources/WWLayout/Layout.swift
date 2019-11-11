@@ -71,7 +71,7 @@ public final class Layout {
         else {
             let traitEnvironment: UITraitEnvironment =
                 view.owningViewController()
-                    ?? UIApplication.shared.keyWindow
+                    ?? UIApplication.sharedSafe?.keyWindow
                     ?? UIScreen.main
             currentTraits = traitEnvironment.traitCollection
         }
@@ -272,3 +272,21 @@ extension UITraitCollection {
     #endif
     
 }
+
+#if os(iOS) || os(tvOS)
+extension UIApplication {
+    
+    /// A safe accessor for `UIApplication.shared`
+    ///
+    /// iOS extensions do not currently support `UIApplication.shared`.
+    /// In order to provide compatibility, it needs to be accessed in a safe way.
+    fileprivate static var sharedSafe: UIApplication? {
+        let sharedSelector = NSSelectorFromString("sharedApplication")
+        guard UIApplication.responds(to: sharedSelector) else {
+            return nil
+        }
+        return UIApplication.perform(sharedSelector)?.takeUnretainedValue() as? UIApplication
+    }
+    
+}
+#endif
