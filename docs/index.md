@@ -41,6 +41,8 @@ A more complicated example:
 
 [Method Reference](method-reference)
 
+[Size classes](size-classes)
+
 ### Migrating from other layout methods
 
 [If you're coming from PureLayout...](from-purelayout)
