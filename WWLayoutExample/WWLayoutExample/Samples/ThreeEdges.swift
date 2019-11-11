@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-public class ThreeEdges : SampleViewController {
+public class ThreeEdges: SampleViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +63,11 @@ public class ThreeEdges : SampleViewController {
 
 extension CGFloat {
     static func random(min: CGFloat = 0.0, max: CGFloat = 1.0) -> CGFloat {
-        return min + (max - min) * CGFloat(arc4random_uniform(UINT32_MAX)) / CGFloat(UINT32_MAX)
+        #if swift(>=5)
+            return .random(in: min..<max)
+        #else
+            // swiftlint:disable legacy_random
+            return min + (max - min) * CGFloat(arc4random_uniform(UINT32_MAX)) / CGFloat(UINT32_MAX)
+        #endif
     }
 }

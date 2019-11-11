@@ -41,8 +41,8 @@ class BasicViewToSuperviewTests: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         container = nil
+        super.tearDown()
     }
     
     func testConstraintCounts() {
@@ -92,7 +92,9 @@ class BasicViewToSuperviewTests: XCTestCase {
         checkConstraintCount("width to height", 1) { return $0.layout.width(toHeight: 0.5) }
     }
     
-    private func checkConstraintCount(_ description: String, _ expected: Int, makeConstraints: (UIView) -> Layout) {
+    private func checkConstraintCount(_ description: String,
+                                      _ expected: Int,
+                                      makeConstraints: (UIView) -> Layout) {
         let subview = UIView()
         container.addSubview(subview)
         
@@ -154,6 +156,8 @@ class BasicViewToSuperviewTests: XCTestCase {
         checkConstrainedSize("width matches parent", width: 400) { $0.layout.width(to: .superview) }
         checkConstrainedSize("height matches parent", height: 400) { $0.layout.height(to: .superview) }
         
+        checkConstrainedSize("width to container + 20", width: 420) { $0.layout.width(to: container.layout.width + 20) }
+        checkConstrainedSize("width to container - 20", width: 380) { $0.layout.width(to: container.layout.width - 20) }
         checkConstrainedSize("width to container * .5", width: 200) { $0.layout.width(to: container.layout.width * 0.5) }
         checkConstrainedSize("width to container * .5", width: 200) { $0.layout.width(to: container, multiplier: 0.5) }
         checkConstrainedSize("width to superview * .5", width: 200) { $0.layout.width(to: .superview, multiplier: 0.5) }
@@ -182,7 +186,10 @@ class BasicViewToSuperviewTests: XCTestCase {
         checkConstrainedSize("size to CGSize", width: 300, height: 300) { $0.layout.size(CGSize(width: 300, height: 300)) }
     }
     
-    private func checkConstrainedSize(_ descroiption: String, width: CGFloat? = nil, height: CGFloat? = nil, makeConstraints: (UIView) -> Void) {
+    private func checkConstrainedSize(_ descroiption: String,
+                                      width: CGFloat? = nil,
+                                      height: CGFloat? = nil,
+                                      makeConstraints: (UIView) -> Void) {
         let subview = UIView()
         container.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
         if container.constraints.isEmpty {

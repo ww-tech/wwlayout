@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-public class LayoutMarginsSample : SampleViewController {
+public class LayoutMarginsSample: SampleViewController {
     
     let insetView = UIView()
     let label = UILabel()
@@ -88,4 +88,3 @@ public class LayoutMarginsSample : SampleViewController {
             .center(in: insetView, axis: .x)
     }
 }
-

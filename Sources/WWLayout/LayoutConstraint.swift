@@ -43,6 +43,14 @@ public class LayoutConstraint: NSLayoutConstraint {
         return self
     }
     
+    /// Helper to set priority & activate an NSLayoutConstraint all at once
+    @discardableResult
+    internal func set(priority: LayoutPriority, active: Bool) -> LayoutConstraint {
+        self.priority = UILayoutPriority(rawValue: priority.rawValue)
+        isActive = active
+        return self
+    }
+    
     #if swift(>=4.2)
         public typealias Attribute = NSLayoutConstraint.Attribute
         public typealias Relation = NSLayoutConstraint.Relation
@@ -58,16 +66,11 @@ extension Array where Element == LayoutConstraint {
         self.forEach { $0.activate(with: priority) }
     }
     
-    internal func activate() {
-        self.forEach { $0.isActive = true }
-    }
+    internal func activate() { self.setActive(true) }
+    internal func deactivate() { self.setActive(false) }
     
-    internal func deactivate() {
-        self.forEach { $0.isActive = false }
-    }
-    
-    internal func tag(_ tag: Int) {
-        self.forEach { $0.tag = tag }
+    internal func setActive(_ active: Bool) {
+        self.forEach { $0.isActive = active }
     }
     
 }

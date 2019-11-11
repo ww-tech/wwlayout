@@ -49,8 +49,8 @@ class SiblingTests: XCTestCase {
         
         view1 = UIView()
         view2 = UIView()
-        view1.layout.size(200);
-        view2.layout.size(200);
+        view1.layout.size(200)
+        view2.layout.size(200)
         container.addSubview(view1)
         container.addSubview(view2)
     }

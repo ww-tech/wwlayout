@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-public class BasicSample : UIViewController {
+public class BasicSample: UIViewController {
     
     let insetView = UIView()
     let squareView = UIView()
@@ -41,6 +41,7 @@ public class BasicSample : UIViewController {
     let slider = UISlider()
     
     override public func viewDidLoad() {
+        super.viewDidLoad()
         setupViews()
         setupConstraints()
     }
