@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name            = "WWLayout"
-  s.version         = "0.5.7"
+  s.version         = "0.6.0"
   s.summary         = "Swifty DSL for programmatic Auto Layout in iOS"
   s.description     = "WWLayout is an elegant way to add auto-layout constraints with code."
   s.homepage        = "https://ww-tech.github.io/wwlayout/"
