@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
-            let firstViewController = ViewController()
+            let firstViewController = SampleListViewController()
             let navigationController = UINavigationController(rootViewController: firstViewController)
             window.rootViewController = navigationController
             window.makeKeyAndVisible()

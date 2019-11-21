@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-public class Baselines : SampleViewController {
+public class Baselines: SampleViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,15 @@ public class Baselines : SampleViewController {
         let paragraph = UILabel()
         paragraph.font = UIFont(name: "Arial", size: 16)
         paragraph.numberOfLines = 0
-        paragraph.text = "orem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur lacus non dapibus lobortis. Nunc at elit a mauris mattis rutrum vel sit amet purus. Morbi at est non felis consequat fermentum. Duis accumsan non felis ut iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque ornare velit lectus, id tincidunt lectus sodales nec. Nunc non lorem eget justo laoreet ornare quis non mi. Nunc facilisis arcu nec risus dignissim, a varius ligula pulvinar. Aliquam leo mauris, accumsan a sapien vel, congue lobortis velit."
+        paragraph.text = """
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur lacus \
+            non dapibus lobortis. Nunc at elit a mauris mattis rutrum vel sit amet purus. Morbi \
+            at est non felis consequat fermentum. Duis accumsan non felis ut iaculis. Orci \
+            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. \
+            Pellentesque ornare velit lectus, id tincidunt lectus sodales nec. Nunc non lorem \
+            eget justo laoreet ornare quis non mi. Nunc facilisis arcu nec risus dignissim, a \
+            varius ligula pulvinar. Aliquam leo mauris, accumsan a sapien vel, congue lobortis velit.
+            """
         insetView.addSubview(paragraph)
         
         let byline = UILabel()

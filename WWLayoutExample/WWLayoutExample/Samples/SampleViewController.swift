@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-public class SampleViewController : UIViewController {
+public class SampleViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ public class SampleViewController : UIViewController {
     
     @objc func toggleTabBar() {
         if let tabBarController = tabBarController {
-            tabBarController.tabBar.isHidden = !tabBarController.tabBar.isHidden
+            tabBarController.tabBar.isHidden.toggle()
             if tabBarController.tabBar.isHidden {
                 UIView.animate(withDuration: 0.2, animations: {
                     self.view.setNeedsLayout()

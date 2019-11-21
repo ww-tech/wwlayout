@@ -1,10 +1,11 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  WWLayoutExampleTests.swift
+//  UITraitCollection+Active.swift
+//  WWLayout
 //
-//  Created by Steven Grosmark on 12/1/17.
-//  Copyright © 2018 WW International, Inc.
+//  Created by Steven Grosmark on 5/6/18.
+//  Copyright © 2018 WW International, Inc. All rights reserved.
 //
 //
 //  This source file is part of the WWLayout open source project
@@ -28,31 +29,21 @@
 //===----------------------------------------------------------------------===//
 //
 
-import XCTest
-@testable import WWLayoutExample
+import UIKit
 
-class WWLayoutExampleTests: XCTestCase {
+extension UITraitCollection {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    internal func isActive(horizontalSize: UIUserInterfaceSizeClass?, verticalSize: UIUserInterfaceSizeClass?) -> Bool {
+        return isActive(horizontalSize: horizontalSize) && isActive(verticalSize: verticalSize)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    internal func isActive(horizontalSize: UIUserInterfaceSizeClass?) -> Bool {
+        guard let hSize = horizontalSize else { return true }
+        return hSize == .unspecified || horizontalSizeClass == hSize
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    internal func isActive(verticalSize: UIUserInterfaceSizeClass?) -> Bool {
+        guard let vSize = verticalSize else { return true }
+        return vSize == .unspecified || verticalSizeClass == vSize
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
