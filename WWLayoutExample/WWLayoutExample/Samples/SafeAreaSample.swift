@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-public class SafeAreaSample : SampleViewController {
+public class SafeAreaSample: SampleViewController {
     
     let insetView = UIView()
     let label = UILabel()
@@ -88,4 +88,3 @@ public class SafeAreaSample : SampleViewController {
             .center(in: insetView, axis: .x)
     }
 }
-

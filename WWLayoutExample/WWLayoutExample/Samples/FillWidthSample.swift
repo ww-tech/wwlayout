@@ -48,7 +48,7 @@ public class FillWidthSample: SampleViewController {
         let minScreenWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
         let avgScreenWidth = round((minScreenWidth + maxScreenWidth) / 2)
         
-        var previousView: UIView? = nil
+        var previousView: UIView?
         func add(_ subview: UIView, maxWidth: CGFloat, alignTo edge: LayoutXEdge = .center) {
             insetView.addSubview(subview)
             if let previousView = previousView {

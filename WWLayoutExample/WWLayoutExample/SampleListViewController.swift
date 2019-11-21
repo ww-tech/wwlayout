@@ -1,7 +1,7 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  ViewController.swift
+//  SampleListViewController.swift
 //
 //  Created by Steven Grosmark on 12/1/17.
 //  Copyright © 2018 WW International, Inc.
@@ -31,7 +31,7 @@
 import UIKit
 import WWLayout
 
-class ViewController: UIViewController {
+class SampleListViewController: UIViewController {
 
     fileprivate let cellIdentifier = "Cell"
     fileprivate var tableView: UITableView?
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         title = "WW Layout Samples"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"Samples", style:.plain, target:nil, action:nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Samples", style: .plain, target: nil, action: nil)
         
         setupViews()
         setupConstraints()
@@ -57,12 +57,14 @@ class ViewController: UIViewController {
         
         items = [
             Item(label: "Basic Sample", controller: { return BasicSample() }),
-            Item(label: "Safe Area Sample", controller: { return self.wrapInTabBar(SafeAreaSample()) } ),
-            Item(label: "Layout Margins Sample", controller: { return self.wrapInTabBar(LayoutMarginsSample()) } ),
-            Item(label: "Three Edges", controller: { return ThreeEdges() } ),
-            Item(label: "Fill Width", controller: { return FillWidthSample() } ),
-            Item(label: "Center Edges", controller: { return CenterEdges() } ),
-            Item(label: "Baseline Edges", controller: { return Baselines() } )
+            Item(label: "Safe Area Sample", controller: { return self.wrapInTabBar(SafeAreaSample()) }),
+            Item(label: "Layout Margins Sample", controller: { return self.wrapInTabBar(LayoutMarginsSample()) }),
+            Item(label: "Three Edges", controller: { return ThreeEdges() }),
+            Item(label: "Fill Width", controller: { return FillWidthSample() }),
+            Item(label: "Center Edges", controller: { return CenterEdges() }),
+            Item(label: "Baseline Edges", controller: { return Baselines() }),
+            Item(label: "Tags", controller: { return TaggingSample() }),
+            Item(label: "Size Classes", controller: { return SizeClassSample() })
         ]
         
         tableView = UITableView()
@@ -87,7 +89,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDataSource {
+extension SampleListViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -101,7 +103,7 @@ extension ViewController: UITableViewDataSource {
     
 }
 
-extension ViewController: UITableViewDelegate {
+extension SampleListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = items[indexPath.row]

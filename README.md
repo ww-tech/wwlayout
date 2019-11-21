@@ -4,11 +4,12 @@
 <h1 align="center">WWLayout</h1>
 <p align="center">
     <!--
-    <a href="https://circleci.com/gh/WW-Tech/wwlayout"><img src="https://circleci.com/gh/WW-Tech/wwlayout.svg?style=shield&circle-token=b07c1f3716093b5923bb5e16c452ed0de8c9fbc0" /></a>
+    <img src="https://circleci.com/gh/ww-tech/wwlayout/tree/develop.svg?style=shield" />
     <a href="https://codeclimate.com/repos/5bd1ca9c535ea53834001d51/maintainability"><img src="https://api.codeclimate.com/v1/badges/d42334bce58294611b8b/maintainability" /></a>
     <a href="https://codeclimate.com/repos/5bd1ca9c535ea53834001d51/test_coverage"><img src="https://api.codeclimate.com/v1/badges/d42334bce58294611b8b/test_coverage" /></a>
     -->
-    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift%204%20--%205.1-compatible-brightgreen.svg?style=flat" /></a>
+    <img src="https://img.shields.io/badge/Swift-4.0%20--%205.1-blueviolet.svg?style=flat" />
+    <img src="https://img.shields.io/badge/iOS-10.3%20--%2013.x-blue.svg?style=flat" />
 </p>
 
 Easy to write auto layout constraints, with minimal extensions to standard namespaces.
