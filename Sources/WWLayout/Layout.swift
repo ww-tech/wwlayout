@@ -65,7 +65,7 @@ public final class Layout {
         // Figure out the current size traits for the view.
         // Child view controllers can have their traits overridden, so start there.
         var currentTraits: UITraitCollection
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, *), #available(tvOS 13.0, *) {
             currentTraits = view.owningViewController()?.traitCollection ?? .current
         }
         else {
