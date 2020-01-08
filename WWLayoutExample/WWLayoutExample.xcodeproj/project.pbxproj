@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7904E8B923C548CD0059FE58 /* WWLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 7904E8B823C548CD0059FE58 /* WWLayout */; };
 		79058CEC1FD1AAE400544900 /* SafeAreaSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79058CEB1FD1AAE400544900 /* SafeAreaSample.swift */; };
-		7905B0F61FD2ADEA001E8B07 /* WWLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7905B0F31FD2ADD7001E8B07 /* WWLayout.framework */; };
 		790E71822142872E0055AB1A /* FillWidthSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E71812142872E0055AB1A /* FillWidthSample.swift */; };
 		791D1D62209C7E8600DA0D32 /* TaggingSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791D1D61209C7E8600DA0D32 /* TaggingSample.swift */; };
 		7933FFA620177D4F00A92B07 /* CenterEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933FFA520177D4F00A92B07 /* CenterEdges.swift */; };
@@ -24,26 +24,8 @@
 		B004B13F2012771B00E991F3 /* ThreeEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004B13E2012771B00E991F3 /* ThreeEdges.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7905B0F21FD2ADD7001E8B07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7905B0ED1FD2ADD7001E8B07 /* WWLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 798F25201FD18FA4006E6A44;
-			remoteInfo = WWLayout;
-		};
-		7905B0F41FD2ADD7001E8B07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7905B0ED1FD2ADD7001E8B07 /* WWLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 798F25291FD18FA4006E6A44;
-			remoteInfo = WWLayoutTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		79058CEB1FD1AAE400544900 /* SafeAreaSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaSample.swift; sourceTree = "<group>"; };
-		7905B0ED1FD2ADD7001E8B07 /* WWLayout.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WWLayout.xcodeproj; path = ../WWLayout.xcodeproj; sourceTree = "<group>"; };
 		790E71812142872E0055AB1A /* FillWidthSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillWidthSample.swift; sourceTree = "<group>"; };
 		791D1D61209C7E8600DA0D32 /* TaggingSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggingSample.swift; sourceTree = "<group>"; };
 		7933FFA520177D4F00A92B07 /* CenterEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterEdges.swift; sourceTree = "<group>"; };
@@ -66,26 +48,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7905B0F61FD2ADEA001E8B07 /* WWLayout.framework in Frameworks */,
+				7904E8B923C548CD0059FE58 /* WWLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7905B0EE1FD2ADD7001E8B07 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7905B0F31FD2ADD7001E8B07 /* WWLayout.framework */,
-				7905B0F51FD2ADD7001E8B07 /* WWLayoutTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		798F25481FD190AB006E6A44 = {
 			isa = PBXGroup;
 			children = (
-				7905B0ED1FD2ADD7001E8B07 /* WWLayout.xcodeproj */,
 				798F25531FD190AB006E6A44 /* WWLayoutExample */,
 				798F25521FD190AB006E6A44 /* Products */,
 				798F25951FD19161006E6A44 /* Frameworks */,
@@ -154,6 +126,9 @@
 			dependencies = (
 			);
 			name = WWLayoutExample;
+			packageProductDependencies = (
+				7904E8B823C548CD0059FE58 /* WWLayout */,
+			);
 			productName = WWLayoutExample;
 			productReference = 798F25511FD190AB006E6A44 /* WWLayoutExample.app */;
 			productType = "com.apple.product-type.application";
@@ -184,37 +159,17 @@
 				Base,
 			);
 			mainGroup = 798F25481FD190AB006E6A44;
+			packageReferences = (
+				7904E8B723C548CD0059FE58 /* XCRemoteSwiftPackageReference "wwlayout" */,
+			);
 			productRefGroup = 798F25521FD190AB006E6A44 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 7905B0EE1FD2ADD7001E8B07 /* Products */;
-					ProjectRef = 7905B0ED1FD2ADD7001E8B07 /* WWLayout.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				798F25501FD190AB006E6A44 /* WWLayoutExample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		7905B0F31FD2ADD7001E8B07 /* WWLayout.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = WWLayout.framework;
-			remoteRef = 7905B0F21FD2ADD7001E8B07 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7905B0F51FD2ADD7001E8B07 /* WWLayoutTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = WWLayoutTests.xctest;
-			remoteRef = 7905B0F41FD2ADD7001E8B07 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		798F254F1FD190AB006E6A44 /* Resources */ = {
@@ -389,7 +344,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -403,7 +359,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WWLayoutExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -421,7 +380,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WWLayoutExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weightwatchers.WWLayoutExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -452,6 +414,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7904E8B723C548CD0059FE58 /* XCRemoteSwiftPackageReference "wwlayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ww-tech/wwlayout";
+			requirement = {
+				branch = feature/swiftpm;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7904E8B823C548CD0059FE58 /* WWLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7904E8B723C548CD0059FE58 /* XCRemoteSwiftPackageReference "wwlayout" */;
+			productName = WWLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 798F25491FD190AB006E6A44 /* Project object */;
 }
