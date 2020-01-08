@@ -103,12 +103,12 @@ jobs:
       - checkout
       - install_dependencies
       - run:
-          name: "Build example app using spm"
+          name: "Build example (test spm)"
           command: >-
-            fastlane scan
+            xcodebuild build test
             --project "WWLayoutExample/WWLayoutExample.xcodeproj"
             --scheme "WWLayoutExample"
-            --device "iPhone 11"
+            --destination "platform=iOS Simulator,name=iPhone 11"
             --xcargs "SWIFT_VERSION=5.1"
 
 workflows:
