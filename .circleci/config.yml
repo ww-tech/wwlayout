@@ -105,7 +105,7 @@ jobs:
       - run:
           name: "Build example (test spm)"
           command: >-
-            xcodebuild build test
+            xcodebuild build
             -project "WWLayoutExample/WWLayoutExample.xcodeproj"
             -scheme "WWLayoutExample"
             -destination "platform=iOS Simulator,name=iPhone 11"
