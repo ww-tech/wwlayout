@@ -106,10 +106,9 @@ jobs:
           name: "Build example (test spm)"
           command: >-
             xcodebuild build test
-            --project "WWLayoutExample/WWLayoutExample.xcodeproj"
-            --scheme "WWLayoutExample"
-            --destination "platform=iOS Simulator,name=iPhone 11"
-            --xcargs "SWIFT_VERSION=5.1"
+            -project "WWLayoutExample/WWLayoutExample.xcodeproj"
+            -scheme "WWLayoutExample"
+            -destination "platform=iOS Simulator,name=iPhone 11"
 
 workflows:
   version: 2
