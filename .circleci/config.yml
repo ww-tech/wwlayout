@@ -108,7 +108,7 @@ jobs:
             fastlane scan
             --project "WWLayoutExample/WWLayoutExample.xcodeproj"
             --scheme "WWLayoutExample"
-            --device "iPHONE 11"
+            --device "iPhone 11"
             --xcargs "SWIFT_VERSION=5.1"
 
 workflows:
