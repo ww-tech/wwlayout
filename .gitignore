@@ -33,6 +33,12 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
+## Swift package manager
+Packages/
+Package.pins
+Package.resolved
+.swiftpm
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
