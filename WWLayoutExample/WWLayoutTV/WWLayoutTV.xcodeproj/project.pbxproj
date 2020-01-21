@@ -463,7 +463,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ww-tech/wwlayout";
 			requirement = {
-				branch = feature/swiftpm;
+				branch = develop;
 				kind = branch;
 			};
 		};
