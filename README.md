@@ -56,6 +56,16 @@ A more complicated example:
 
 ## Installation
 
+### Swift Package Manager
+
+The WWLayout Package URL is:
+
+```
+https://github.com/ww-tech/wwlayout.git
+```
+
+Add the package dependency to your Xcode project using the `File` -> `Swift Packages` -> `Add Package Dependency...` menu item.
+
 ### Cocoapods
 
 Simply add WWLayout to your `Podfile`:

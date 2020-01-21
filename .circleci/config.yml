@@ -84,7 +84,7 @@ jobs:
   build-and-test-swift51:
     <<: *defaults
     macos:
-      xcode: 11.0.0
+      xcode: 11.3.0
     steps:
       - checkout
       - install_dependencies
@@ -94,6 +94,21 @@ jobs:
       - build:
           swift: '5.1'
           device: 'iPhone 11'
+
+  build-and-test-swiftpm:
+    <<: *defaults
+    macos:
+      xcode: 11.3.0
+    steps:
+      - checkout
+      - install_dependencies
+      - run:
+          name: "Build example (test spm)"
+          command: >-
+            xcodebuild build
+            -project "WWLayoutExample/WWLayoutTV/WWLayoutTV.xcodeproj"
+            -scheme "WWLayoutTV"
+            -destination "platform=tvOS Simulator,name=Apple TV"
 
 workflows:
   version: 2
@@ -105,6 +120,9 @@ workflows:
           requires:
             - build-gem-cache
       - build-and-test-swift51:
+          requires:
+            - build-gem-cache
+      - build-and-test-swiftpm:
           requires:
             - build-gem-cache
 
