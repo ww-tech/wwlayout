@@ -12,7 +12,6 @@ import WWLayout
 
 class WWLayoutTVTests: XCTestCase {
 
-    
     /// Simple test to make sure WWLayout is properly added to project
     func testExample() {
         // given
