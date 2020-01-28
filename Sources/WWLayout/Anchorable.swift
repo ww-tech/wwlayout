@@ -112,7 +112,7 @@ public enum SpecialAnchorable {
         
         case .safeArea:
             // constraing a view to safeArea means constraining it to it's superview's safeAreaLayoutGuide
-            if #available(iOS 11.0, *) {
+            if #available(iOS 11.0, *), #available(tvOS 11.0, *) {
                 return superview.safeAreaLayoutGuide
             }
             // fall back to the superview left/right, and the controller's top/bottom layout guides

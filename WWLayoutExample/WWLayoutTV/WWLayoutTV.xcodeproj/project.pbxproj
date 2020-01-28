@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7904E87E23C540AA0059FE58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904E87D23C540AA0059FE58 /* AppDelegate.swift */; };
+		7904E88023C540AA0059FE58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904E87F23C540AA0059FE58 /* ViewController.swift */; };
+		7904E88523C540AB0059FE58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7904E88423C540AB0059FE58 /* Assets.xcassets */; };
+		7904E88823C540AB0059FE58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7904E88623C540AB0059FE58 /* LaunchScreen.storyboard */; };
+		7904E89323C540AB0059FE58 /* WWLayoutTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904E89223C540AB0059FE58 /* WWLayoutTVTests.swift */; };
+		79145BD523D756520088CE21 /* WWLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 79145BD423D756520088CE21 /* WWLayout */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7904E88F23C540AB0059FE58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7904E87223C540AA0059FE58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7904E87923C540AA0059FE58;
+			remoteInfo = WWLayoutTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7904E87A23C540AA0059FE58 /* WWLayoutTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWLayoutTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7904E87D23C540AA0059FE58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7904E87F23C540AA0059FE58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7904E88423C540AB0059FE58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7904E88723C540AB0059FE58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7904E88923C540AB0059FE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7904E88E23C540AB0059FE58 /* WWLayoutTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WWLayoutTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7904E89223C540AB0059FE58 /* WWLayoutTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWLayoutTVTests.swift; sourceTree = "<group>"; };
+		7904E89423C540AB0059FE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7904E87723C540AA0059FE58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79145BD523D756520088CE21 /* WWLayout in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7904E88B23C540AB0059FE58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7904E87123C540AA0059FE58 = {
+			isa = PBXGroup;
+			children = (
+				7904E87C23C540AA0059FE58 /* WWLayoutTV */,
+				7904E89123C540AB0059FE58 /* WWLayoutTVTests */,
+				7904E87B23C540AA0059FE58 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7904E87B23C540AA0059FE58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7904E87A23C540AA0059FE58 /* WWLayoutTV.app */,
+				7904E88E23C540AB0059FE58 /* WWLayoutTVTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7904E87C23C540AA0059FE58 /* WWLayoutTV */ = {
+			isa = PBXGroup;
+			children = (
+				7904E87D23C540AA0059FE58 /* AppDelegate.swift */,
+				7904E87F23C540AA0059FE58 /* ViewController.swift */,
+				7904E88423C540AB0059FE58 /* Assets.xcassets */,
+				7904E88623C540AB0059FE58 /* LaunchScreen.storyboard */,
+				7904E88923C540AB0059FE58 /* Info.plist */,
+			);
+			path = WWLayoutTV;
+			sourceTree = "<group>";
+		};
+		7904E89123C540AB0059FE58 /* WWLayoutTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				7904E89223C540AB0059FE58 /* WWLayoutTVTests.swift */,
+				7904E89423C540AB0059FE58 /* Info.plist */,
+			);
+			path = WWLayoutTVTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7904E87923C540AA0059FE58 /* WWLayoutTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7904E89723C540AB0059FE58 /* Build configuration list for PBXNativeTarget "WWLayoutTV" */;
+			buildPhases = (
+				7904E87623C540AA0059FE58 /* Sources */,
+				7904E87723C540AA0059FE58 /* Frameworks */,
+				7904E87823C540AA0059FE58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WWLayoutTV;
+			packageProductDependencies = (
+				79145BD423D756520088CE21 /* WWLayout */,
+			);
+			productName = WWLayoutTV;
+			productReference = 7904E87A23C540AA0059FE58 /* WWLayoutTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7904E88D23C540AB0059FE58 /* WWLayoutTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7904E89A23C540AB0059FE58 /* Build configuration list for PBXNativeTarget "WWLayoutTVTests" */;
+			buildPhases = (
+				7904E88A23C540AB0059FE58 /* Sources */,
+				7904E88B23C540AB0059FE58 /* Frameworks */,
+				7904E88C23C540AB0059FE58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7904E89023C540AB0059FE58 /* PBXTargetDependency */,
+			);
+			name = WWLayoutTVTests;
+			productName = WWLayoutTVTests;
+			productReference = 7904E88E23C540AB0059FE58 /* WWLayoutTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7904E87223C540AA0059FE58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "WW International";
+				TargetAttributes = {
+					7904E87923C540AA0059FE58 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					7904E88D23C540AB0059FE58 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 7904E87923C540AA0059FE58;
+					};
+				};
+			};
+			buildConfigurationList = 7904E87523C540AA0059FE58 /* Build configuration list for PBXProject "WWLayoutTV" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7904E87123C540AA0059FE58;
+			packageReferences = (
+				79145BD323D756520088CE21 /* XCRemoteSwiftPackageReference "wwlayout" */,
+			);
+			productRefGroup = 7904E87B23C540AA0059FE58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7904E87923C540AA0059FE58 /* WWLayoutTV */,
+				7904E88D23C540AB0059FE58 /* WWLayoutTVTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7904E87823C540AA0059FE58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7904E88823C540AB0059FE58 /* LaunchScreen.storyboard in Resources */,
+				7904E88523C540AB0059FE58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7904E88C23C540AB0059FE58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7904E87623C540AA0059FE58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7904E88023C540AA0059FE58 /* ViewController.swift in Sources */,
+				7904E87E23C540AA0059FE58 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7904E88A23C540AB0059FE58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7904E89323C540AB0059FE58 /* WWLayoutTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7904E89023C540AB0059FE58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7904E87923C540AA0059FE58 /* WWLayoutTV */;
+			targetProxy = 7904E88F23C540AB0059FE58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7904E88623C540AB0059FE58 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7904E88723C540AB0059FE58 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7904E89523C540AB0059FE58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		7904E89623C540AB0059FE58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7904E89823C540AB0059FE58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WWLayoutTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ww.WWLayoutTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		7904E89923C540AB0059FE58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WWLayoutTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ww.WWLayoutTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		7904E89B23C540AB0059FE58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WWLayoutTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ww.WWLayoutTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WWLayoutTV.app/WWLayoutTV";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		7904E89C23C540AB0059FE58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WWLayoutTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ww.WWLayoutTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WWLayoutTV.app/WWLayoutTV";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7904E87523C540AA0059FE58 /* Build configuration list for PBXProject "WWLayoutTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7904E89523C540AB0059FE58 /* Debug */,
+				7904E89623C540AB0059FE58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7904E89723C540AB0059FE58 /* Build configuration list for PBXNativeTarget "WWLayoutTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7904E89823C540AB0059FE58 /* Debug */,
+				7904E89923C540AB0059FE58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7904E89A23C540AB0059FE58 /* Build configuration list for PBXNativeTarget "WWLayoutTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7904E89B23C540AB0059FE58 /* Debug */,
+				7904E89C23C540AB0059FE58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79145BD323D756520088CE21 /* XCRemoteSwiftPackageReference "wwlayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ww-tech/wwlayout";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79145BD423D756520088CE21 /* WWLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79145BD323D756520088CE21 /* XCRemoteSwiftPackageReference "wwlayout" */;
+			productName = WWLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7904E87223C540AA0059FE58 /* Project object */;
+}
