@@ -66,6 +66,18 @@ extension Layout {
                      active: Bool? = nil) -> Layout {
         return fill(other, axis: axis, inset: Insets(inset), priority: priority, tag: tag, active: active)
     }
+
+    /// Set the view so it fills another view.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ other: Anchorable,
+                     axis: LayoutAxis = .xy,
+                     inset: UIEdgeInsets,
+                     priority: LayoutPriority? = nil,
+                     tag: Int? = nil,
+                     active: Bool? = nil) -> Layout {
+        return fill(other, axis: axis, inset: Insets(inset), priority: priority, tag: tag, active: active)
+    }
     
     /// Set the view so it fills special anchors.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `special`, based on the `axis` parameter.
@@ -85,6 +97,18 @@ extension Layout {
     public func fill(_ special: SpecialAnchorable,
                      axis: LayoutAxis = .xy,
                      inset: CGFloat,
+                     priority: LayoutPriority? = nil,
+                     tag: Int? = nil,
+                     active: Bool? = nil) -> Layout {
+        return fill(special, axis: axis, inset: Insets(inset), priority: priority, tag: tag, active: active)
+    }
+
+    /// Set the view so it fills another view.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ special: SpecialAnchorable,
+                     axis: LayoutAxis = .xy,
+                     inset: UIEdgeInsets,
                      priority: LayoutPriority? = nil,
                      tag: Int? = nil,
                      active: Bool? = nil) -> Layout {
@@ -129,6 +153,18 @@ extension Layout {
                      active: Bool? = nil) -> Layout {
         return fill(other, except: except, inset: Insets(inset), priority: priority, tag: tag, active: active)
     }
+
+    /// Set the view so it fills another view - excluding one edge.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ other: Anchorable,
+                     except: LayoutFillEdge,
+                     inset: UIEdgeInsets,
+                     priority: LayoutPriority? = nil,
+                     tag: Int? = nil,
+                     active: Bool? = nil) -> Layout {
+        return fill(other, except: except, inset: Insets(inset), priority: priority, tag: tag, active: active)
+    }
     
     /// Set the view so it fills special anchors - excluding one edge.
     /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `special`, based on the `axis` parameter.
@@ -148,6 +184,18 @@ extension Layout {
     public func fill(_ special: SpecialAnchorable,
                      except: LayoutFillEdge,
                      inset: CGFloat,
+                     priority: LayoutPriority? = nil,
+                     tag: Int? = nil,
+                     active: Bool? = nil) -> Layout {
+        return fill(special, except: except, inset: Insets(inset), priority: priority, tag: tag, active: active)
+    }
+
+    /// Set the view so it fills another view - excluding one edge.
+    /// Will constrain the edges (left, top, bottom, right) of the target view to the edges of `otherView`, based on the `axis` parameter.
+    @discardableResult
+    public func fill(_ special: SpecialAnchorable,
+                     except: LayoutFillEdge,
+                     inset: UIEdgeInsets,
                      priority: LayoutPriority? = nil,
                      tag: Int? = nil,
                      active: Bool? = nil) -> Layout {
@@ -201,6 +249,22 @@ extension Layout {
     
     /// Set the view so it fills the width of another view, with a maximum allowed width.
     /// Will constrain:
+    ///     the left & right edges of the target view to the edges of `other` at `priority` - 1;
+    ///     the width to be <= `maximum`
+    ///     the `alignTo` edge to the same ot `other`.
+    @discardableResult
+    public func fillWidth(of other: Anchorable,
+                          inset: UIEdgeInsets,
+                          maximum: CGFloat,
+                          alignTo edge: LayoutXEdge = .center,
+                          priority: LayoutPriority? = nil,
+                          tag: Int? = nil,
+                          active: Bool? = nil) -> Layout {
+        return fillWidth(of: other, inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority, tag: tag, active: active)
+    }
+
+    /// Set the view so it fills the width of another view, with a maximum allowed width.
+    /// Will constrain:
     ///     the left & right edges of the target view to the edges of `special` at `priority` - 1;
     ///     the width to be <= `maximum`
     ///     the `alignTo` edge to the same of `special`.
@@ -213,6 +277,38 @@ extension Layout {
                           tag: Int? = nil,
                           active: Bool? = nil) -> Layout {
         return fillWidth(of: special.anchorable(with: view), inset: inset, maximum: maximum, alignTo: edge, priority: priority, tag: tag, active: active)
+    }
+
+    /// Set the view so it fills the width of another view, with a maximum allowed width.
+    /// Will constrain:
+    ///     the left & right edges of the target view to the edges of `special` at `priority` - 1;
+    ///     the width to be <= `maximum`
+    ///     the `alignTo` edge to the same of `special`.
+    @discardableResult
+    public func fillWidth(of special: SpecialAnchorable,
+                          inset: CGFloat,
+                          maximum: CGFloat,
+                          alignTo edge: LayoutXEdge = .center,
+                          priority: LayoutPriority? = nil,
+                          tag: Int? = nil,
+                          active: Bool? = nil) -> Layout {
+        return fillWidth(of: special.anchorable(with: view), inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority, tag: tag, active: active)
+    }
+
+    /// Set the view so it fills the width of another view, with a maximum allowed width.
+    /// Will constrain:
+    ///     the left & right edges of the target view to the edges of `special` at `priority` - 1;
+    ///     the width to be <= `maximum`
+    ///     the `alignTo` edge to the same of `special`.
+    @discardableResult
+    public func fillWidth(of special: SpecialAnchorable,
+                          inset: UIEdgeInsets,
+                          maximum: CGFloat,
+                          alignTo edge: LayoutXEdge = .center,
+                          priority: LayoutPriority? = nil,
+                          tag: Int? = nil,
+                          active: Bool? = nil) -> Layout {
+        return fillWidth(of: special.anchorable(with: view), inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority, tag: tag, active: active)
     }
     
 }
