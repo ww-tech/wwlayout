@@ -185,6 +185,17 @@ class SizeClassTests: XCTestCase {
         XCTAssertAllEqual(compactConstraints.map { $0.isActive }, true)
     }
     
+    #if compiler(>=5.3)
+    private func XCTAssertAllEqual<T: Equatable>(_ a: [T],
+                                                 _ expected: T,
+                                                 _ message: @autoclosure () -> String = "",
+                                                 file: StaticString = #filePath,
+                                                 line: UInt = #line) {
+        for value in a {
+            XCTAssertEqual(value, expected, message(), file: file, line: line)
+        }
+    }
+    #else
     private func XCTAssertAllEqual<T: Equatable>(_ a: [T],
                                                  _ expected: T,
                                                  _ message: @autoclosure () -> String = "",
@@ -194,6 +205,7 @@ class SizeClassTests: XCTestCase {
             XCTAssertEqual(value, expected, message(), file: file, line: line)
         }
     }
+    #endif
     
     private func override(horizontal: UIUserInterfaceSizeClass, vertical: UIUserInterfaceSizeClass) {
         let previous = controller.traitCollection
