@@ -104,14 +104,14 @@ public enum SpecialAnchorable {
             return superview
         
         case .margins:
-            // constraing a view to margins means constraining it to it's superview's layoutMarginsGuide
+            // constraining a view to margins means constraining it to it's superview's layoutMarginsGuide
             if superview.next == nil {
                 print("WARNING: using .margins, but view hasn't been added to the view hierarchy yet - layout will fail pre iOS 11")
             }
             return superview.layoutMarginsGuide
         
         case .safeArea:
-            // constraing a view to safeArea means constraining it to it's superview's safeAreaLayoutGuide
+            // constraining a view to safeArea means constraining it to it's superview's safeAreaLayoutGuide
             if #available(iOS 11.0, *), #available(tvOS 11.0, *) {
                 return superview.safeAreaLayoutGuide
             }
