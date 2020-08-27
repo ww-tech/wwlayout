@@ -73,6 +73,7 @@ You can also constrain from a view's center using the `.centerX(to:)` and `.cent
 ```swift
     oneView.layout.fillWidth(anotherView, maximum: 400)
     oneView.layout.fillWidth(anotherView, inset: 20, maximum: 400)
+    oneView.layout.fillWidth(anotherView, inset: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), maximum: 400)
     oneView.layout.fillWidth(anotherView, inset: 20, maximum: 400, alignTo: .leading)
 ```
 
