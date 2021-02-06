@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "798F25501FD190AB006E6A44"
-               BuildableName = "WWLayoutExample.app"
-               BlueprintName = "WWLayoutExample"
-               ReferencedContainer = "container:WWLayoutExample.xcodeproj">
+               BlueprintIdentifier = "7904E87923C540AA0059FE58"
+               BuildableName = "WWLayoutTV.app"
+               BlueprintName = "WWLayoutTV"
+               ReferencedContainer = "container:WWLayoutTV.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,34 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "798F25501FD190AB006E6A44"
-            BuildableName = "WWLayoutExample.app"
-            BlueprintName = "WWLayoutExample"
-            ReferencedContainer = "container:WWLayoutExample.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "798F25641FD190AB006E6A44"
-               BuildableName = "WWLayoutExampleTests.xctest"
-               BlueprintName = "WWLayoutExampleTests"
-               ReferencedContainer = "container:WWLayoutExample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "798F256F1FD190AB006E6A44"
-               BuildableName = "WWLayoutExampleUITests.xctest"
-               BlueprintName = "WWLayoutExampleUITests"
-               ReferencedContainer = "container:WWLayoutExample.xcodeproj">
+               BlueprintIdentifier = "7904E88D23C540AB0059FE58"
+               BuildableName = "WWLayoutTVTests.xctest"
+               BlueprintName = "WWLayoutTVTests"
+               ReferencedContainer = "container:WWLayoutTV.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -73,10 +54,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "798F25501FD190AB006E6A44"
-            BuildableName = "WWLayoutExample.app"
-            BlueprintName = "WWLayoutExample"
-            ReferencedContainer = "container:WWLayoutExample.xcodeproj">
+            BlueprintIdentifier = "7904E87923C540AA0059FE58"
+            BuildableName = "WWLayoutTV.app"
+            BlueprintName = "WWLayoutTV"
+            ReferencedContainer = "container:WWLayoutTV.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -90,10 +71,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "798F25501FD190AB006E6A44"
-            BuildableName = "WWLayoutExample.app"
-            BlueprintName = "WWLayoutExample"
-            ReferencedContainer = "container:WWLayoutExample.xcodeproj">
+            BlueprintIdentifier = "7904E87923C540AA0059FE58"
+            BuildableName = "WWLayoutTV.app"
+            BlueprintName = "WWLayoutTV"
+            ReferencedContainer = "container:WWLayoutTV.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
