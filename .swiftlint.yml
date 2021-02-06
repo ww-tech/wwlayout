@@ -4,15 +4,15 @@
 # Find all the available rules by running:
 # swiftlint rules
 
-# rules to exclude from running
-disabled_rules:
+disabled_rules: # rule identifiers to exclude from running
   - identifier_name
+  - line_length
   - no_extension_access_modifier
-  - statement_position # a.k.a. cuddled else
+  - statement_position
   - shorthand_operator
+  - multiple_closures_with_trailing_closure
 
-# rules that must run
-opt_in_rules:
+opt_in_rules: # some rules are only opt-in
   - anyobject_protocol
   - collection_alignment
   - closure_spacing
@@ -34,6 +34,7 @@ opt_in_rules:
   - empty_string
   - empty_xctest_method
   - explicit_init
+  - first_where
   - force_cast
   - force_try
   - force_unwrapping
@@ -47,6 +48,7 @@ opt_in_rules:
   - multiline_parameters
   - no_space_in_method_call
   - opening_brace
+  - operator_usage_whitespace
   - overridden_super_call
   - prohibited_super_call
   - redundant_discardable_let
@@ -70,10 +72,6 @@ custom_rules:
     name: "No space after opening parentheses"
     message: "Please avoid using space after opening parentheses"
     regex: '\(\h+'
-  no_space_before_closing_parentheses:
-    name: "No space before closing parentheses"
-    message: "Please avoid using space before closing parentheses"
-    regex: '\h+\)'
 
   anonymous_init:
     name: "Anonymous init()"
@@ -105,8 +103,6 @@ function_parameter_count:
   warning: 6
   error: 9
 
-line_length: 160
-
 nesting:
   type_level:
     warning: 3 # default is 1
@@ -116,18 +112,22 @@ trailing_whitespace:
 
 type_body_length:
   warning: 500 # default is 200
-  error: 600 # default is 350
+  error: 1000 # default is 350
 
 unused_setter_value: error
+
 
 #---
 #--- Paths
 
 #included: # paths to include during linting. `--path` is ignored if present.
 #  - ../Pod
+# In ios-common-config, the path to the sources will be done via the --path argument
 
-# excluded: # paths to ignore during linting. Takes precedence over `included`.
-#   - ./vendor
-#   - ./fastlane
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - ./Example/Pods
+  - ./Pods
+  - ./vendor
+  - ./fastlane
 
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
