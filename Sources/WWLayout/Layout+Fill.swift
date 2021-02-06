@@ -292,7 +292,15 @@ extension Layout {
                           priority: LayoutPriority? = nil,
                           tag: Int? = nil,
                           active: Bool? = nil) -> Layout {
-        return fillWidth(of: special.anchorable(with: view), inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority, tag: tag, active: active)
+        return fillWidth(
+            of: special.anchorable(with: view),
+            inset: Insets(inset),
+            maximum: maximum,
+            alignTo: edge,
+            priority: priority,
+            tag: tag,
+            active: active
+        )
     }
 
     /// Set the view so it fills the width of another view, with a maximum allowed width.
@@ -308,7 +316,15 @@ extension Layout {
                           priority: LayoutPriority? = nil,
                           tag: Int? = nil,
                           active: Bool? = nil) -> Layout {
-        return fillWidth(of: special.anchorable(with: view), inset: Insets(inset), maximum: maximum, alignTo: edge, priority: priority, tag: tag, active: active)
+        return fillWidth(
+            of: special.anchorable(with: view),
+            inset: Insets(inset),
+            maximum: maximum,
+            alignTo: edge,
+            priority: priority,
+            tag: tag,
+            active: active
+        )
     }
     
 }
