@@ -96,6 +96,17 @@ class FillTests: XCTestCase {
         XCTAssertEqual(child.frame.origin.x, 20)
         assertConstraints(constraints, priority: .required, active: true)
     }
+
+    func test_fillWidth_uiEdgeInsets() {
+        // when
+        let constraints = child.layout.fillWidth(of: .superview, inset: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), maximum: 400).constraints()
+        container.layoutIfNeeded()
+
+        // then
+        XCTAssertEqual(child.frame.size.width, 360)
+        XCTAssertEqual(child.frame.origin.x, 20)
+        assertConstraints(constraints, priority: .required, active: true)
+    }
     
     func test_fillWidth_insetsIgnored() {
         // when
