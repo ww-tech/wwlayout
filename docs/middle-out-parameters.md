@@ -48,6 +48,9 @@ The `inset` parameter can either be a single constant, a pair of width, height c
     
     // each edge explicitly specified
     .fill(.superview, inset: Insets(left: 10, top: 5, right: 20, bottom: 0))
+
+    // each edge explicitly specified with UIEdgeInsets
+    fill(.superview, inset: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 20))
 ```
 
 ### `edge`

@@ -1,5 +1,5 @@
 //
-//===----------------------------------------------------------------------===//
+// ===----------------------------------------------------------------------===//
 //
 //  FillTests.swift
 //
@@ -11,7 +11,7 @@
 //
 //     https://github.com/ww-tech/wwlayout
 //
-//  Copyright © 2017-2019 WW International, Inc.
+//  Copyright © 2017-2021 WW International, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 //
-//===----------------------------------------------------------------------===//
+// ===----------------------------------------------------------------------===//
 //
 
 import XCTest
@@ -91,6 +91,17 @@ class FillTests: XCTestCase {
         let constraints = child.layout.fillWidth(of: .superview, inset: 20, maximum: 400).constraints()
         container.layoutIfNeeded()
         
+        // then
+        XCTAssertEqual(child.frame.size.width, 360)
+        XCTAssertEqual(child.frame.origin.x, 20)
+        assertConstraints(constraints, priority: .required, active: true)
+    }
+
+    func test_fillWidth_uiEdgeInsets() {
+        // when
+        let constraints = child.layout.fillWidth(of: .superview, inset: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), maximum: 400).constraints()
+        container.layoutIfNeeded()
+
         // then
         XCTAssertEqual(child.frame.size.width, 360)
         XCTAssertEqual(child.frame.origin.x, 20)
