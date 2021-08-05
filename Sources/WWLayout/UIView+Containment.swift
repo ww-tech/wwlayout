@@ -51,7 +51,9 @@ extension UIView {
             return owningVC.view
         }
         var rootView = self
-        while let superview = rootView.superview { rootView = superview }
+        while let superview = rootView.superview, !(superview is UIWindow) {
+            rootView = superview
+        }
         return rootView
     }
     
