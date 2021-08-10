@@ -64,7 +64,7 @@ internal final class LayoutView: UIView {
     
     /// Get a list of constraints tagged with a specific tag
     internal func getConstraints(with tag: Int) -> [LayoutConstraint] {
-        return taggedConstraints[tag, default:[]].compactMap { $0.constraint }
+        return taggedConstraints[tag, default:[]].compactMap { return $0.constraint }
     }
     
     /// Activate / deactivate all constraints with a specific tag
@@ -107,7 +107,7 @@ internal final class LayoutView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("unsupported") }
     
     private func sizedConstraints(_ sizeClass: SizeClass) -> [LayoutConstraint] {
-        sizedConstraints[sizeClass, default: []].compactMap { $0.constraint }
+        sizedConstraints[sizeClass, default: []].compactMap { return $0.constraint }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
