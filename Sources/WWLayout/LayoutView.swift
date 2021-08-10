@@ -107,7 +107,7 @@ internal final class LayoutView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("unsupported") }
     
     private func sizedConstraints(_ sizeClass: SizeClass) -> [LayoutConstraint] {
-        sizedConstraints[sizeClass, default: []].compactMap { return $0.constraint }
+        retun sizedConstraints[sizeClass, default: []].compactMap { return $0.constraint }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
