@@ -40,6 +40,8 @@
 		798F25471FD1902F006E6A44 /* Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F25461FD1902F006E6A44 /* Insets.swift */; };
 		798F259A1FD19861006E6A44 /* LayoutAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F25991FD19861006E6A44 /* LayoutAxis.swift */; };
 		798F259C1FD1988A006E6A44 /* LayoutEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F259B1FD1988A006E6A44 /* LayoutEdge.swift */; };
+		B010BA9E26C2F855006DB570 /* LayoutViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B010BA9D26C2F855006DB570 /* LayoutViewTests.swift */; };
+		B010BF0726C40AEC006DB570 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B010BF0626C40AEC006DB570 /* UIView+Subviews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		798F25461FD1902F006E6A44 /* Insets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insets.swift; sourceTree = "<group>"; };
 		798F25991FD19861006E6A44 /* LayoutAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAxis.swift; sourceTree = "<group>"; };
 		798F259B1FD1988A006E6A44 /* LayoutEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutEdge.swift; sourceTree = "<group>"; };
+		B010BA9D26C2F855006DB570 /* LayoutViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewTests.swift; sourceTree = "<group>"; };
+		B010BF0626C40AEC006DB570 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,17 +116,19 @@
 		7904E89D23C545740059FE58 /* WWLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				7904E89E23C545740059FE58 /* SizeClassTests.swift */,
-				7904E89F23C545740059FE58 /* SafeAreaTests.swift */,
-				7904E8A023C545740059FE58 /* TaggingTests.swift */,
-				7904E8A123C545740059FE58 /* SiblingTests.swift */,
-				7904E8A223C545740059FE58 /* FillTests.swift */,
 				7904E8A323C545740059FE58 /* BasicViewToSuperviewTests.swift */,
 				7904E8A423C545740059FE58 /* ConstraintArrayTests.swift */,
-				7904E8A523C545740059FE58 /* SwiftCompatibility.swift */,
+				7904E8A223C545740059FE58 /* FillTests.swift */,
 				7904E8A623C545740059FE58 /* InsetTests.swift */,
+				B010BA9D26C2F855006DB570 /* LayoutViewTests.swift */,
 				7904E8A723C545740059FE58 /* PriorityTests.swift */,
+				7904E89F23C545740059FE58 /* SafeAreaTests.swift */,
+				7904E8A123C545740059FE58 /* SiblingTests.swift */,
+				7904E89E23C545740059FE58 /* SizeClassTests.swift */,
 				7904E8A823C545740059FE58 /* StackingTests.swift */,
+				7904E8A523C545740059FE58 /* SwiftCompatibility.swift */,
+				7904E8A023C545740059FE58 /* TaggingTests.swift */,
+				B010BF0626C40AEC006DB570 /* UIView+Subviews.swift */,
 			);
 			name = WWLayoutTests;
 			path = Tests/WWLayoutTests;
@@ -342,10 +348,12 @@
 				7904E8AE23C545740059FE58 /* FillTests.swift in Sources */,
 				7904E8B123C545740059FE58 /* SwiftCompatibility.swift in Sources */,
 				7904E8AC23C545740059FE58 /* TaggingTests.swift in Sources */,
+				B010BF0726C40AEC006DB570 /* UIView+Subviews.swift in Sources */,
 				7904E8B023C545740059FE58 /* ConstraintArrayTests.swift in Sources */,
 				7904E8AA23C545740059FE58 /* SizeClassTests.swift in Sources */,
 				7904E8B423C545740059FE58 /* StackingTests.swift in Sources */,
 				7904E8B223C545740059FE58 /* InsetTests.swift in Sources */,
+				B010BA9E26C2F855006DB570 /* LayoutViewTests.swift in Sources */,
 				7904E8AB23C545740059FE58 /* SafeAreaTests.swift in Sources */,
 				7904E8AF23C545740059FE58 /* BasicViewToSuperviewTests.swift in Sources */,
 				7904E8B323C545740059FE58 /* PriorityTests.swift in Sources */,

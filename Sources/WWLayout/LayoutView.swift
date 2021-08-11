@@ -55,21 +55,21 @@ internal final class LayoutView: UIView {
     /// A constraint is only added when it is tagged (i.e. constarint.tag != 0)
     internal func add(_ constraint: LayoutConstraint) {
         guard constraint.tag != 0 else { return }
-        taggedConstraints[constraint.tag, default: []] += [constraint]
+        taggedConstraints[constraint.tag, default: []] += [WeakConstraintBox(constraint)]
     }
     
     internal func add(_ constraint: LayoutConstraint, sizeClass: SizeClass) {
-        sizedConstraints[sizeClass, default: []] += [constraint]
+        sizedConstraints[sizeClass, default: []] += [WeakConstraintBox(constraint)]
     }
     
     /// Get a list of constraints tagged with a specific tag
     internal func getConstraints(with tag: Int) -> [LayoutConstraint] {
-        return taggedConstraints[tag, default:[]]
+        return taggedConstraints[tag, default:[]].compactMap { return $0.constraint }
     }
     
     /// Activate / deactivate all constraints with a specific tag
     internal func setActive(_ active: Bool, tag: Int) {
-        taggedConstraints[tag, default:[]].setActive(active)
+        getConstraints(with: tag).setActive(active)
     }
     
     /// Activate / deactivate all constraints when switching from one size class to another.
@@ -78,18 +78,26 @@ internal final class LayoutView: UIView {
         if let old = fromSizeClass {
             let deactivate = old.matches().subtracting(activate)
             for sizeClass in deactivate {
-                sizedConstraints[sizeClass, default: []].setActive(false)
+                sizedConstraints(sizeClass).setActive(false)
             }
         }
         for sizeClass in activate {
-            sizedConstraints[sizeClass, default: []].setActive(true)
+            sizedConstraints(sizeClass).setActive(true)
         }
     }
     
     // MARK: - Private implementation
     
-    private var taggedConstraints = [Int: [LayoutConstraint]]()
-    private var sizedConstraints = [SizeClass: [LayoutConstraint]]()
+    private struct WeakConstraintBox {
+        weak var constraint: LayoutConstraint?
+        
+        init(_ constraint: LayoutConstraint) {
+            self.constraint = constraint
+        }
+    }
+    
+    private var taggedConstraints = [Int: [WeakConstraintBox]]()
+    private var sizedConstraints = [SizeClass: [WeakConstraintBox]]()
     
     private init() {
         super.init(frame: .zero)
@@ -97,6 +105,10 @@ internal final class LayoutView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("unsupported") }
+    
+    private func sizedConstraints(_ sizeClass: SizeClass) -> [LayoutConstraint] {
+        return sizedConstraints[sizeClass, default: []].compactMap { return $0.constraint }
+    }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         let newSizeClass = SizeClass(horizontal: traitCollection.horizontalSizeClass,
