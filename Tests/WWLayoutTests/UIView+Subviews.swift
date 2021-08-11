@@ -1,11 +1,10 @@
 //
 // ===----------------------------------------------------------------------===//
 //
-//  UIView+Containment.swift
-//  WWLayout
+//  UIView+Subviews.swift
 //
-//  Created by Steven Grosmark on 5/4/18.
-//  Copyright © 2018 WW International, Inc. All rights reserved.
+//  Created by Steven Grosmark on 08/11/2021
+//  Copyright © 2021 WW International, Inc.
 //
 //
 //  This source file is part of the WWLayout open source project
@@ -33,28 +32,17 @@ import UIKit
 
 extension UIView {
     
-    /// Retrieve the UIViewController whose view hirearchy contains this view
-    internal func owningViewController() -> UIViewController? {
-        var responder: UIResponder = self
-        while let parentResponder = responder.next {
-            if let vc = parentResponder as? UIViewController {
-                return vc
-            }
-            responder = parentResponder
-        }
-        return nil
+    convenience init(subviews: UIView...) {
+        self.init()
+        addSubviews(subviews)
     }
     
-    /// Retrieve the UIView that is at the root of the view hierarchy that contains this view
-    internal func owningSuperview() -> UIView {
-        if let owningVC = owningViewController() {
-            return owningVC.view
-        }
-        var rootView = self
-        while let superview = rootView.superview, !(superview is UIWindow) {
-            rootView = superview
-        }
-        return rootView
+    func addSubviews(_ views: UIView...) {
+        addSubviews(views)
+    }
+    
+    func addSubviews(_ views: [UIView]) {
+        views.forEach(addSubview)
     }
     
 }
