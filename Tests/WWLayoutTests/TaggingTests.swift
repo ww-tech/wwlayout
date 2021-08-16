@@ -173,67 +173,58 @@ class TaggingTests: XCTestCase {
         let child = UIView()
         container.addSubview(child)
         
+        func checkStatus(tag: Int, count: Int, active: Bool) {
+            let found = Layout.findConstraints(in: container, tag: tag)
+            XCTAssertEqual(found.count, count)
+            for constraint in found {
+                XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, active)
+            }
+        }
+        
         // when
         // create some active, some not
-        child.layout.center(in: .superview, tag: 111, active: false)
-        child.layout(tag: 999).fill(.superview)
+        autoreleasepool {
+            child.layout.center(in: .superview, tag: 111, active: false)
+            child.layout(tag: 999).fill(.superview)
+        }
         
         // then
         // make sure they were created ok
-        let constraints1 = Layout.findConstraints(in: container, tag: 111)
-        XCTAssertEqual(constraints1.count, 2)
-        for constraint in constraints1 {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.tag, 111)
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, false)
-        }
-        let constraints2 = Layout.findConstraints(in: container, tag: 999)
-        XCTAssertEqual(constraints2.count, 4)
-        for constraint in constraints2 {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.tag, 999)
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, true)
-        }
+        checkStatus(tag: 111, count: 2, active: false)
+        checkStatus(tag: 999, count: 4, active: true)
         
         // when
         // switch active state for the two tags
-        Layout.switchActiveConstraints(in: container, activeTag: 111, deactiveTag: 999)
-        container.layoutIfNeeded()
+        autoreleasepool {
+            Layout.switchActiveConstraints(in: container, activeTag: 111, deactiveTag: 999)
+        }
         
         // then
         // active status should have swapped
-        for constraint in Layout.findConstraints(in: container, tag: 111) {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, true)
-        }
-        for constraint in Layout.findConstraints(in: container, tag: 999) {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, false)
-        }
+        checkStatus(tag: 111, count: 2, active: true)
+        checkStatus(tag: 999, count: 4, active: false)
         
         // when
         // switch to same state (i.e. a noop)
-        Layout.switchActiveConstraints(in: container, activeTag: 111, deactiveTag: 999)
-        container.layoutIfNeeded()
+        autoreleasepool {
+            Layout.switchActiveConstraints(in: container, activeTag: 111, deactiveTag: 999)
+        }
         
         // then
         // active status should not have changed
-        for constraint in Layout.findConstraints(in: container, tag: 111) {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, true)
-        }
-        for constraint in Layout.findConstraints(in: container, tag: 999) {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, false)
-        }
+        checkStatus(tag: 111, count: 2, active: true)
+        checkStatus(tag: 999, count: 4, active: false)
         
         // when
         // switch active state back for the two tags
-        Layout.switchActiveConstraints(in: container, activeTag: 999, deactiveTag: 111)
-        container.layoutIfNeeded()
+        autoreleasepool {
+            Layout.switchActiveConstraints(in: container, activeTag: 999, deactiveTag: 111)
+        }
         
         // then
         // active status should have swapped back
-        for constraint in Layout.findConstraints(in: container, tag: 111) {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, false)
-        }
-        for constraint in Layout.findConstraints(in: container, tag: 999) {
-            XCTAssertEqual((constraint as? LayoutConstraint)?.isActive, true)
-        }
+        checkStatus(tag: 111, count: 2, active: false)
+        checkStatus(tag: 999, count: 4, active: true)
     }
     
 }
