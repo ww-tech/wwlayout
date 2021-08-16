@@ -196,6 +196,7 @@ class TaggingTests: XCTestCase {
         // when
         // switch active state for the two tags
         Layout.switchActiveConstraints(in: container, activeTag: 111, deactiveTag: 999)
+        container.layoutIfNeeded()
         
         // then
         // active status should have swapped
@@ -209,6 +210,7 @@ class TaggingTests: XCTestCase {
         // when
         // switch to same state (i.e. a noop)
         Layout.switchActiveConstraints(in: container, activeTag: 111, deactiveTag: 999)
+        container.layoutIfNeeded()
         
         // then
         // active status should not have changed
@@ -222,6 +224,7 @@ class TaggingTests: XCTestCase {
         // when
         // switch active state back for the two tags
         Layout.switchActiveConstraints(in: container, activeTag: 999, deactiveTag: 111)
+        container.layoutIfNeeded()
         
         // then
         // active status should have swapped back
