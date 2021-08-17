@@ -55,16 +55,16 @@ internal final class LayoutView: UIView {
     /// A constraint is only added when it is tagged (i.e. constarint.tag != 0)
     internal func add(_ constraint: LayoutConstraint) {
         guard constraint.tag != 0 else { return }
-        taggedConstraints[constraint.tag, default: []] += [WeakConstraintBox(constraint)]
+        taggedConstraints[constraint.tag, default: []] += [constraint]
     }
     
     internal func add(_ constraint: LayoutConstraint, sizeClass: SizeClass) {
-        sizedConstraints[sizeClass, default: []] += [WeakConstraintBox(constraint)]
+        sizedConstraints[sizeClass, default: []] += [constraint]
     }
     
     /// Get a list of constraints tagged with a specific tag
     internal func getConstraints(with tag: Int) -> [LayoutConstraint] {
-        return taggedConstraints[tag, default:[]].compactMap { return $0.constraint }
+        return taggedConstraints[tag, default:[]]
     }
     
     /// Activate / deactivate all constraints with a specific tag
@@ -88,16 +88,8 @@ internal final class LayoutView: UIView {
     
     // MARK: - Private implementation
     
-    private struct WeakConstraintBox {
-        weak var constraint: LayoutConstraint?
-        
-        init(_ constraint: LayoutConstraint) {
-            self.constraint = constraint
-        }
-    }
-    
-    private var taggedConstraints = [Int: [WeakConstraintBox]]()
-    private var sizedConstraints = [SizeClass: [WeakConstraintBox]]()
+    private var taggedConstraints = [Int: [LayoutConstraint]]()
+    private var sizedConstraints = [SizeClass: [LayoutConstraint]]()
     
     private init() {
         super.init(frame: .zero)
@@ -107,7 +99,7 @@ internal final class LayoutView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("unsupported") }
     
     private func sizedConstraints(_ sizeClass: SizeClass) -> [LayoutConstraint] {
-        return sizedConstraints[sizeClass, default: []].compactMap { return $0.constraint }
+        return sizedConstraints[sizeClass, default: []]
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
