@@ -93,9 +93,13 @@ class SizeClassTests: XCTestCase {
         override(horizontal: .compact, vertical: .regular)
         
         // when
-        let regularConstraint = child.layout(horizontalSize: .regular).width(200).constraints().first
-        let compactConstraint = child.layout(horizontalSize: .compact).width(300).constraints().first
-        child.layoutIfNeeded()
+        weak var regularConstraint: NSLayoutConstraint?
+        weak var compactConstraint: NSLayoutConstraint?
+        autoreleasepool {
+            regularConstraint = child.layout(horizontalSize: .regular).width(200).constraints().first
+            compactConstraint = child.layout(horizontalSize: .compact).width(300).constraints().first
+            child.layoutIfNeeded()
+        }
         
         // then
         XCTAssertEqual(child.constraints.count, 1)
@@ -104,9 +108,11 @@ class SizeClassTests: XCTestCase {
         XCTAssertEqual(compactConstraint?.isActive, true)
         
         // when
-        override(horizontal: .regular, vertical: .regular)
-        child.setNeedsLayout()
-        child.layoutIfNeeded()
+        autoreleasepool {
+            override(horizontal: .regular, vertical: .regular)
+            child.setNeedsLayout()
+            child.layoutIfNeeded()
+        }
         
         // then
         XCTAssertEqual(child.constraints.count, 1)
@@ -120,9 +126,13 @@ class SizeClassTests: XCTestCase {
         override(horizontal: .compact, vertical: .compact)
         
         // when
-        let regularConstraint = child.layout(verticalSize: .regular).height(200).constraints().first
-        let compactConstraint = child.layout(verticalSize: .compact).height(300).constraints().first
-        child.layoutIfNeeded()
+        weak var regularConstraint: NSLayoutConstraint?
+        weak var compactConstraint: NSLayoutConstraint?
+        autoreleasepool {
+            regularConstraint = child.layout(verticalSize: .regular).height(200).constraints().first
+            compactConstraint = child.layout(verticalSize: .compact).height(300).constraints().first
+            child.layoutIfNeeded()
+        }
         
         // then
         XCTAssertEqual(child.constraints.count, 1)
@@ -131,9 +141,11 @@ class SizeClassTests: XCTestCase {
         XCTAssertEqual(compactConstraint?.isActive, true)
         
         // when
-        override(horizontal: .compact, vertical: .regular)
-        child.setNeedsLayout()
-        child.layoutIfNeeded()
+        autoreleasepool {
+            override(horizontal: .compact, vertical: .regular)
+            child.setNeedsLayout()
+            child.layoutIfNeeded()
+        }
         
         // then
         XCTAssertEqual(child.constraints.count, 1)
