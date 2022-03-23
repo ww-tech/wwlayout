@@ -77,7 +77,7 @@ Simply add WWLayout to your `Podfile`:
 ## Contributing
 
 ## Authors
-* [Steven Grosmark](https://github.com/g-mark), steven.grosmark@weightwatchers.com
+* [Steven Grosmark](https://github.com/g-mark), steven.grosmark@ww.com
 * WW iOS Team
 
 ## License
