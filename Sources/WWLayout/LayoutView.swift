@@ -64,7 +64,7 @@ internal final class LayoutView: UIView {
     
     /// Get a list of constraints tagged with a specific tag
     internal func getConstraints(with tag: Int) -> [LayoutConstraint] {
-        return taggedConstraints[tag, default:[]]
+        return taggedConstraints[tag, default: []]
     }
     
     /// Activate / deactivate all constraints with a specific tag
