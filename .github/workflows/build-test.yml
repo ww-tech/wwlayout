@@ -5,11 +5,11 @@ on:
  workflow_dispatch:
 
 jobs:
-  unit-test:
-    runs-on: macos-11
+  build-test-macos12:
+    runs-on: macos-12
     strategy:
      matrix:
-      xcode-version: [13.2, 12.5.1]
+      xcode-version: [13.4.1, 14.0.1]
     
     steps:
       - name: Checkout
@@ -22,9 +22,27 @@ jobs:
         run: fastlane scan --devices "iPhone 8,iPhone 11"
         env:
          DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode-version }}.app
+         
+  build-test-macos13:
+    runs-on: macos-13
+    strategy:
+     matrix:
+      xcode-version: [14.2, 14.3]
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2  
+      
+      - name: Install dependencies in Gemfile
+        run: gem install fastlane
+      
+      - name:  Unit Tests, using Xcode ${{ matrix.xcode-version }}
+        run: fastlane scan --devices "iPhone 8,iPhone 13"
+        env:
+         DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode-version }}.app
   
   build-spm:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2  
