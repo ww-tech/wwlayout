@@ -200,10 +200,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 798F25341FD18FA4006E6A44 /* Build configuration list for PBXNativeTarget "WWLayout" */;
 			buildPhases = (
+				798F251D1FD18FA4006E6A44 /* Headers */,
 				798F251B1FD18FA4006E6A44 /* Sources */,
 				7990EB912375A40E00D9ECDC /* SwiftLint */,
 				798F251C1FD18FA4006E6A44 /* Frameworks */,
-				798F251D1FD18FA4006E6A44 /* Headers */,
 				798F251E1FD18FA4006E6A44 /* Resources */,
 			);
 			buildRules = (
