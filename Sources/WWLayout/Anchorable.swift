@@ -147,13 +147,19 @@ public struct EmulatedSafeAreaAnchorable: Anchorable {
     public func anchor(_ edge: LayoutYEdge) -> LayoutYAnchor {
         switch edge {
         case .top:
-            if let anchor = controller?.topLayoutGuide {
-                return LayoutYAnchor(item: anchor, attribute: .bottom)
+            if #available(iOS 11.0, *) { }
+            else {
+                if let anchor = controller?.topLayoutGuide {
+                    return LayoutYAnchor(item: anchor, attribute: .bottom)
+                }
             }
             return LayoutYAnchor(item: view, attribute: .top)
         case .bottom:
-            if let anchor = controller?.bottomLayoutGuide {
-                return LayoutYAnchor(item: anchor, attribute: .top)
+            if #available(iOS 11.0, *) { }
+            else {
+                if let anchor = controller?.bottomLayoutGuide {
+                    return LayoutYAnchor(item: anchor, attribute: .top)
+                }
             }
             return LayoutYAnchor(item: view, attribute: .bottom)
         case .center: return LayoutYAnchor(item: view, attribute: .centerY)
